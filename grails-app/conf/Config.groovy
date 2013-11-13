@@ -105,3 +105,7 @@ grails.plugin.springsecurity.controllerAnnotations.staticRules = [
 	'/**/favicon.ico':                ['permitAll']
 ]
 
+// Custom configs
+grails.gorm.default.constraints = {
+	'*'(nullable: false, blank: false)
+}

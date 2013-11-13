@@ -1,0 +1,933 @@
+2013-11-13 11:59:09,940 [localhost-startStop-1] ERROR StackTrace  - Full Stack Trace:
+java.lang.NullPointerException
+	at org.hibernate.type.descriptor.java.AbstractTypeDescriptor.extractHashCode(AbstractTypeDescriptor.java:88)
+	at org.hibernate.type.AbstractStandardBasicType.getHashCode(AbstractStandardBasicType.java:197)
+	at org.hibernate.type.AbstractStandardBasicType.getHashCode(AbstractStandardBasicType.java:192)
+	at org.hibernate.type.EntityType.getHashCode(EntityType.java:325)
+	at org.hibernate.type.ComponentType.getHashCode(ComponentType.java:222)
+	at org.hibernate.engine.EntityKey.generateHashCode(EntityKey.java:126)
+	at org.hibernate.engine.EntityKey.<init>(EntityKey.java:70)
+	at org.hibernate.event.def.AbstractSaveEventListener.performSave(AbstractSaveEventListener.java:183)
+	at org.hibernate.event.def.AbstractSaveEventListener.saveWithGeneratedId(AbstractSaveEventListener.java:143)
+	at org.hibernate.event.def.DefaultSaveOrUpdateEventListener.saveWithGeneratedOrRequestedId(DefaultSaveOrUpdateEventListener.java:210)
+	at org.hibernate.event.def.DefaultSaveOrUpdateEventListener.entityIsTransient(DefaultSaveOrUpdateEventListener.java:195)
+	at org.hibernate.event.def.DefaultSaveOrUpdateEventListener.performSaveOrUpdate(DefaultSaveOrUpdateEventListener.java:117)
+	at org.hibernate.event.def.DefaultSaveOrUpdateEventListener.onSaveOrUpdate(DefaultSaveOrUpdateEventListener.java:93)
+	at org.codehaus.groovy.grails.orm.hibernate.support.ClosureEventTriggeringInterceptor.onSaveOrUpdate(ClosureEventTriggeringInterceptor.java:108)
+	at org.hibernate.impl.SessionImpl.fireSave(SessionImpl.java:713)
+	at org.hibernate.impl.SessionImpl.save(SessionImpl.java:701)
+	at org.hibernate.impl.SessionImpl.save(SessionImpl.java:697)
+	at org.codehaus.groovy.grails.orm.hibernate.metaclass.SavePersistentMethod$2.doInHibernate(SavePersistentMethod.java:73)
+	at org.springframework.orm.hibernate3.HibernateTemplate.doExecute(HibernateTemplate.java:406)
+	at org.springframework.orm.hibernate3.HibernateTemplate.execute(HibernateTemplate.java:339)
+	at org.codehaus.groovy.grails.orm.hibernate.metaclass.SavePersistentMethod.performInsert(SavePersistentMethod.java:69)
+	at org.codehaus.groovy.grails.orm.hibernate.metaclass.AbstractSavePersistentMethod.doInvokeInternal(AbstractSavePersistentMethod.java:212)
+	at org.codehaus.groovy.grails.orm.hibernate.metaclass.AbstractDynamicPersistentMethod.invoke(AbstractDynamicPersistentMethod.java:63)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.springsource.loaded.ri.ReflectiveInterceptor.jlrMethodInvoke(ReflectiveInterceptor.java:1259)
+	at org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSite.invoke(PojoMetaMethodSite.java:189)
+	at org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite.call(PojoMetaMethodSite.java:53)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:45)
+	at org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite.call(PojoMetaMethodSite.java:55)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:124)
+	at org.codehaus.groovy.grails.orm.hibernate.HibernateGormInstanceApi.save(HibernateGormEnhancer.groovy:911)
+	at security.UserRole.save(UserRole.groovy)
+	at security.UserRole$save.call(Unknown Source)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:45)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:108)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:116)
+	at security.UserRole.create(UserRole.groovy:36)
+	at security.UserRole$create.call(Unknown Source)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:45)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:108)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:124)
+	at BootStrap$_closure1.doCall(BootStrap.groovy:19)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.springsource.loaded.ri.ReflectiveInterceptor.jlrMethodInvoke(ReflectiveInterceptor.java:1259)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:90)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:233)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1082)
+	at groovy.lang.ExpandoMetaClass.invokeMethod(ExpandoMetaClass.java:1106)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:906)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:956)
+	at groovy.lang.ExpandoMetaClass.invokeMethod(ExpandoMetaClass.java:1106)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:906)
+	at groovy.lang.Closure.call(Closure.java:412)
+	at groovy.lang.Closure.call(Closure.java:406)
+	at grails.util.Environment.evaluateEnvironmentSpecificBlock(Environment.java:308)
+	at grails.util.Environment.executeForEnvironment(Environment.java:301)
+	at grails.util.Environment.executeForCurrentEnvironment(Environment.java:277)
+	at org.codehaus.groovy.grails.commons.DefaultGrailsBootstrapClass.callInit(DefaultGrailsBootstrapClass.java:60)
+	at org.codehaus.groovy.grails.web.context.GrailsConfigUtils.executeGrailsBootstraps(GrailsConfigUtils.java:74)
+	at org.codehaus.groovy.grails.web.context.GrailsContextLoader.initWebApplicationContext(GrailsContextLoader.java:108)
+	at org.springframework.web.context.ContextLoaderListener.contextInitialized(ContextLoaderListener.java:111)
+	at org.apache.catalina.core.StandardContext.listenerStart(StandardContext.java:4939)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5434)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1559)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1549)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:262)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:744)
+2013-11-13 11:59:09,943 [localhost-startStop-1] ERROR StackTrace  - Full Stack Trace:
+java.lang.NullPointerException
+	at security.UserRole.create(UserRole.groovy:36)
+	at BootStrap$_closure1.doCall(BootStrap.groovy:19)
+	at grails.util.Environment.evaluateEnvironmentSpecificBlock(Environment.java:308)
+	at grails.util.Environment.executeForEnvironment(Environment.java:301)
+	at grails.util.Environment.executeForCurrentEnvironment(Environment.java:277)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:262)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:744)
+2013-11-13 11:59:09,944 [localhost-startStop-1] ERROR StackTrace  - Full Stack Trace:
+java.lang.NullPointerException
+	at security.UserRole.create(UserRole.groovy:36)
+	at BootStrap$_closure1.doCall(BootStrap.groovy:19)
+	at grails.util.Environment.evaluateEnvironmentSpecificBlock(Environment.java:308)
+	at grails.util.Environment.executeForEnvironment(Environment.java:301)
+	at grails.util.Environment.executeForCurrentEnvironment(Environment.java:277)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:262)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:744)
+2013-11-13 11:59:09,944 [localhost-startStop-1] ERROR StackTrace  - Full Stack Trace:
+java.lang.NullPointerException
+	at security.UserRole.create(UserRole.groovy:36)
+	at BootStrap$_closure1.doCall(BootStrap.groovy:19)
+	at grails.util.Environment.evaluateEnvironmentSpecificBlock(Environment.java:308)
+	at grails.util.Environment.executeForEnvironment(Environment.java:301)
+	at grails.util.Environment.executeForCurrentEnvironment(Environment.java:277)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:262)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:744)
+2013-11-13 11:59:09,944 [localhost-startStop-1] ERROR StackTrace  - Full Stack Trace:
+java.lang.NullPointerException
+	at security.UserRole.create(UserRole.groovy:36)
+	at BootStrap$_closure1.doCall(BootStrap.groovy:19)
+	at grails.util.Environment.evaluateEnvironmentSpecificBlock(Environment.java:308)
+	at grails.util.Environment.executeForEnvironment(Environment.java:301)
+	at grails.util.Environment.executeForCurrentEnvironment(Environment.java:277)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:262)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:744)
+2013-11-13 11:59:09,944 [localhost-startStop-1] ERROR StackTrace  - Full Stack Trace:
+java.lang.NullPointerException
+	at security.UserRole.create(UserRole.groovy:36)
+	at BootStrap$_closure1.doCall(BootStrap.groovy:19)
+	at grails.util.Environment.evaluateEnvironmentSpecificBlock(Environment.java:308)
+	at grails.util.Environment.executeForEnvironment(Environment.java:301)
+	at grails.util.Environment.executeForCurrentEnvironment(Environment.java:277)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:262)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:744)
+2013-11-13 12:00:08,319 [localhost-startStop-1] ERROR StackTrace  - Full Stack Trace:
+org.codehaus.groovy.runtime.InvokerInvocationException: Assertion failed: 
+
+assert User.count() == 1
+            |       |
+            0       false
+
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:97)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:233)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1082)
+	at groovy.lang.ExpandoMetaClass.invokeMethod(ExpandoMetaClass.java:1106)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:906)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:956)
+	at groovy.lang.ExpandoMetaClass.invokeMethod(ExpandoMetaClass.java:1106)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:906)
+	at groovy.lang.Closure.call(Closure.java:412)
+	at groovy.lang.Closure.call(Closure.java:406)
+	at grails.util.Environment.evaluateEnvironmentSpecificBlock(Environment.java:308)
+	at grails.util.Environment.executeForEnvironment(Environment.java:301)
+	at grails.util.Environment.executeForCurrentEnvironment(Environment.java:277)
+	at org.codehaus.groovy.grails.commons.DefaultGrailsBootstrapClass.callInit(DefaultGrailsBootstrapClass.java:60)
+	at org.codehaus.groovy.grails.web.context.GrailsConfigUtils.executeGrailsBootstraps(GrailsConfigUtils.java:74)
+	at org.codehaus.groovy.grails.web.context.GrailsContextLoader.initWebApplicationContext(GrailsContextLoader.java:108)
+	at org.springframework.web.context.ContextLoaderListener.contextInitialized(ContextLoaderListener.java:111)
+	at org.apache.catalina.core.StandardContext.listenerStart(StandardContext.java:4939)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5434)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1559)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1549)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:262)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:744)
+Caused by: Assertion failed: 
+
+assert User.count() == 1
+            |       |
+            0       false
+
+	at org.codehaus.groovy.runtime.InvokerHelper.assertFailed(InvokerHelper.java:399)
+	at org.codehaus.groovy.runtime.ScriptBytecodeAdapter.assertFailed(ScriptBytecodeAdapter.java:655)
+	at BootStrap$_closure1.doCall(BootStrap.groovy:19)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.springsource.loaded.ri.ReflectiveInterceptor.jlrMethodInvoke(ReflectiveInterceptor.java:1259)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:90)
+	... 25 more
+2013-11-13 12:00:08,321 [localhost-startStop-1] ERROR StackTrace  - Full Stack Trace:
+Assertion failed: 
+
+assert User.count() == 1
+            |       |
+            0       false
+
+	at org.codehaus.groovy.runtime.InvokerHelper.assertFailed(InvokerHelper.java:399)
+	at org.codehaus.groovy.runtime.ScriptBytecodeAdapter.assertFailed(ScriptBytecodeAdapter.java:655)
+	at BootStrap$_closure1.doCall(BootStrap.groovy:19)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.springsource.loaded.ri.ReflectiveInterceptor.jlrMethodInvoke(ReflectiveInterceptor.java:1259)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:90)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:233)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1082)
+	at groovy.lang.ExpandoMetaClass.invokeMethod(ExpandoMetaClass.java:1106)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:906)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:956)
+	at groovy.lang.ExpandoMetaClass.invokeMethod(ExpandoMetaClass.java:1106)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:906)
+	at groovy.lang.Closure.call(Closure.java:412)
+	at groovy.lang.Closure.call(Closure.java:406)
+	at grails.util.Environment.evaluateEnvironmentSpecificBlock(Environment.java:308)
+	at grails.util.Environment.executeForEnvironment(Environment.java:301)
+	at grails.util.Environment.executeForCurrentEnvironment(Environment.java:277)
+	at org.codehaus.groovy.grails.commons.DefaultGrailsBootstrapClass.callInit(DefaultGrailsBootstrapClass.java:60)
+	at org.codehaus.groovy.grails.web.context.GrailsConfigUtils.executeGrailsBootstraps(GrailsConfigUtils.java:74)
+	at org.codehaus.groovy.grails.web.context.GrailsContextLoader.initWebApplicationContext(GrailsContextLoader.java:108)
+	at org.springframework.web.context.ContextLoaderListener.contextInitialized(ContextLoaderListener.java:111)
+	at org.apache.catalina.core.StandardContext.listenerStart(StandardContext.java:4939)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5434)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1559)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1549)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:262)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:744)
+2013-11-13 12:00:08,321 [localhost-startStop-1] ERROR StackTrace  - Full Stack Trace:
+org.codehaus.groovy.runtime.InvokerInvocationException: Assertion failed: 
+
+assert User.count() == 1
+            |       |
+            0       false
+
+	at grails.util.Environment.evaluateEnvironmentSpecificBlock(Environment.java:308)
+	at grails.util.Environment.executeForEnvironment(Environment.java:301)
+	at grails.util.Environment.executeForCurrentEnvironment(Environment.java:277)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:262)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:744)
+Caused by: Assertion failed: 
+
+assert User.count() == 1
+            |       |
+            0       false
+
+	at BootStrap$_closure1.doCall(BootStrap.groovy:19)
+	... 7 more
+2013-11-13 12:00:08,321 [localhost-startStop-1] ERROR StackTrace  - Full Stack Trace:
+org.codehaus.groovy.runtime.InvokerInvocationException: Assertion failed: 
+
+assert User.count() == 1
+            |       |
+            0       false
+
+	at grails.util.Environment.evaluateEnvironmentSpecificBlock(Environment.java:308)
+	at grails.util.Environment.executeForEnvironment(Environment.java:301)
+	at grails.util.Environment.executeForCurrentEnvironment(Environment.java:277)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:262)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:744)
+Caused by: Assertion failed: 
+
+assert User.count() == 1
+            |       |
+            0       false
+
+	at BootStrap$_closure1.doCall(BootStrap.groovy:19)
+	... 7 more
+2013-11-13 12:00:08,321 [localhost-startStop-1] ERROR StackTrace  - Full Stack Trace:
+Assertion failed: 
+
+assert User.count() == 1
+            |       |
+            0       false
+
+	at BootStrap$_closure1.doCall(BootStrap.groovy:19)
+	at grails.util.Environment.evaluateEnvironmentSpecificBlock(Environment.java:308)
+	at grails.util.Environment.executeForEnvironment(Environment.java:301)
+	at grails.util.Environment.executeForCurrentEnvironment(Environment.java:277)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:262)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:744)
+2013-11-13 12:00:08,322 [localhost-startStop-1] ERROR StackTrace  - Full Stack Trace:
+org.codehaus.groovy.runtime.InvokerInvocationException: Assertion failed: 
+
+assert User.count() == 1
+            |       |
+            0       false
+
+	at grails.util.Environment.evaluateEnvironmentSpecificBlock(Environment.java:308)
+	at grails.util.Environment.executeForEnvironment(Environment.java:301)
+	at grails.util.Environment.executeForCurrentEnvironment(Environment.java:277)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:262)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:744)
+Caused by: Assertion failed: 
+
+assert User.count() == 1
+            |       |
+            0       false
+
+	at BootStrap$_closure1.doCall(BootStrap.groovy:19)
+	... 7 more
+2013-11-13 12:00:08,322 [localhost-startStop-1] ERROR StackTrace  - Full Stack Trace:
+org.codehaus.groovy.runtime.InvokerInvocationException: Assertion failed: 
+
+assert User.count() == 1
+            |       |
+            0       false
+
+	at grails.util.Environment.evaluateEnvironmentSpecificBlock(Environment.java:308)
+	at grails.util.Environment.executeForEnvironment(Environment.java:301)
+	at grails.util.Environment.executeForCurrentEnvironment(Environment.java:277)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:262)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:744)
+Caused by: Assertion failed: 
+
+assert User.count() == 1
+            |       |
+            0       false
+
+	at BootStrap$_closure1.doCall(BootStrap.groovy:19)
+	... 7 more
+2013-11-13 12:00:08,322 [localhost-startStop-1] ERROR StackTrace  - Full Stack Trace:
+Assertion failed: 
+
+assert User.count() == 1
+            |       |
+            0       false
+
+	at BootStrap$_closure1.doCall(BootStrap.groovy:19)
+	at grails.util.Environment.evaluateEnvironmentSpecificBlock(Environment.java:308)
+	at grails.util.Environment.executeForEnvironment(Environment.java:301)
+	at grails.util.Environment.executeForCurrentEnvironment(Environment.java:277)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:262)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:744)
+2013-11-13 12:00:08,322 [localhost-startStop-1] ERROR StackTrace  - Full Stack Trace:
+org.codehaus.groovy.runtime.InvokerInvocationException: Assertion failed: 
+
+assert User.count() == 1
+            |       |
+            0       false
+
+	at grails.util.Environment.evaluateEnvironmentSpecificBlock(Environment.java:308)
+	at grails.util.Environment.executeForEnvironment(Environment.java:301)
+	at grails.util.Environment.executeForCurrentEnvironment(Environment.java:277)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:262)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:744)
+Caused by: Assertion failed: 
+
+assert User.count() == 1
+            |       |
+            0       false
+
+	at BootStrap$_closure1.doCall(BootStrap.groovy:19)
+	... 7 more
+2013-11-13 12:07:49,488 [localhost-startStop-1] ERROR StackTrace  - Full Stack Trace:
+grails.validation.ValidationException: Validation Error(s) occurred during save():
+- Field error in object 'security.User' on field 'photo': rejected value [null]; codes [security.User.photo.nullable.error.security.User.photo,security.User.photo.nullable.error.photo,security.User.photo.nullable.error.java.io.File,security.User.photo.nullable.error,user.photo.nullable.error.security.User.photo,user.photo.nullable.error.photo,user.photo.nullable.error.java.io.File,user.photo.nullable.error,security.User.photo.nullable.security.User.photo,security.User.photo.nullable.photo,security.User.photo.nullable.java.io.File,security.User.photo.nullable,user.photo.nullable.security.User.photo,user.photo.nullable.photo,user.photo.nullable.java.io.File,user.photo.nullable,nullable.security.User.photo,nullable.photo,nullable.java.io.File,nullable]; arguments [photo,class security.User]; default message [Property [{0}] of class [{1}] cannot be null]
+
+	at org.codehaus.groovy.grails.orm.hibernate.metaclass.AbstractSavePersistentMethod.doInvokeInternal(AbstractSavePersistentMethod.java:190)
+	at org.codehaus.groovy.grails.orm.hibernate.metaclass.AbstractDynamicPersistentMethod.invoke(AbstractDynamicPersistentMethod.java:63)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.springsource.loaded.ri.ReflectiveInterceptor.jlrMethodInvoke(ReflectiveInterceptor.java:1259)
+	at org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSite.invoke(PojoMetaMethodSite.java:189)
+	at org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite.call(PojoMetaMethodSite.java:53)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:45)
+	at org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite.call(PojoMetaMethodSite.java:55)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:124)
+	at org.codehaus.groovy.grails.orm.hibernate.HibernateGormInstanceApi.save(HibernateGormEnhancer.groovy:911)
+	at security.User.save(User.groovy)
+	at security.User$save.call(Unknown Source)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:45)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:108)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:116)
+	at BootStrap$_closure1.doCall(BootStrap.groovy:43)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.springsource.loaded.ri.ReflectiveInterceptor.jlrMethodInvoke(ReflectiveInterceptor.java:1259)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:90)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:233)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1082)
+	at groovy.lang.ExpandoMetaClass.invokeMethod(ExpandoMetaClass.java:1106)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:906)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:956)
+	at groovy.lang.ExpandoMetaClass.invokeMethod(ExpandoMetaClass.java:1106)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:906)
+	at groovy.lang.Closure.call(Closure.java:412)
+	at groovy.lang.Closure.call(Closure.java:406)
+	at grails.util.Environment.evaluateEnvironmentSpecificBlock(Environment.java:308)
+	at grails.util.Environment.executeForEnvironment(Environment.java:301)
+	at grails.util.Environment.executeForCurrentEnvironment(Environment.java:277)
+	at org.codehaus.groovy.grails.commons.DefaultGrailsBootstrapClass.callInit(DefaultGrailsBootstrapClass.java:60)
+	at org.codehaus.groovy.grails.web.context.GrailsConfigUtils.executeGrailsBootstraps(GrailsConfigUtils.java:74)
+	at org.codehaus.groovy.grails.web.context.GrailsContextLoader.initWebApplicationContext(GrailsContextLoader.java:108)
+	at org.springframework.web.context.ContextLoaderListener.contextInitialized(ContextLoaderListener.java:111)
+	at org.apache.catalina.core.StandardContext.listenerStart(StandardContext.java:4939)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5434)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1559)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1549)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:262)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:744)
+2013-11-13 12:07:49,490 [localhost-startStop-1] ERROR StackTrace  - Full Stack Trace:
+grails.validation.ValidationException: Validation Error(s) occurred during save():
+- Field error in object 'security.User' on field 'photo': rejected value [null]; codes [security.User.photo.nullable.error.security.User.photo,security.User.photo.nullable.error.photo,security.User.photo.nullable.error.java.io.File,security.User.photo.nullable.error,user.photo.nullable.error.security.User.photo,user.photo.nullable.error.photo,user.photo.nullable.error.java.io.File,user.photo.nullable.error,security.User.photo.nullable.security.User.photo,security.User.photo.nullable.photo,security.User.photo.nullable.java.io.File,security.User.photo.nullable,user.photo.nullable.security.User.photo,user.photo.nullable.photo,user.photo.nullable.java.io.File,user.photo.nullable,nullable.security.User.photo,nullable.photo,nullable.java.io.File,nullable]; arguments [photo,class security.User]; default message [Property [{0}] of class [{1}] cannot be null]
+
+	at BootStrap$_closure1.doCall(BootStrap.groovy:43)
+	at grails.util.Environment.evaluateEnvironmentSpecificBlock(Environment.java:308)
+	at grails.util.Environment.executeForEnvironment(Environment.java:301)
+	at grails.util.Environment.executeForCurrentEnvironment(Environment.java:277)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:262)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:744)
+2013-11-13 12:07:49,490 [localhost-startStop-1] ERROR StackTrace  - Full Stack Trace:
+grails.validation.ValidationException: Validation Error(s) occurred during save():
+- Field error in object 'security.User' on field 'photo': rejected value [null]; codes [security.User.photo.nullable.error.security.User.photo,security.User.photo.nullable.error.photo,security.User.photo.nullable.error.java.io.File,security.User.photo.nullable.error,user.photo.nullable.error.security.User.photo,user.photo.nullable.error.photo,user.photo.nullable.error.java.io.File,user.photo.nullable.error,security.User.photo.nullable.security.User.photo,security.User.photo.nullable.photo,security.User.photo.nullable.java.io.File,security.User.photo.nullable,user.photo.nullable.security.User.photo,user.photo.nullable.photo,user.photo.nullable.java.io.File,user.photo.nullable,nullable.security.User.photo,nullable.photo,nullable.java.io.File,nullable]; arguments [photo,class security.User]; default message [Property [{0}] of class [{1}] cannot be null]
+
+	at BootStrap$_closure1.doCall(BootStrap.groovy:43)
+	at grails.util.Environment.evaluateEnvironmentSpecificBlock(Environment.java:308)
+	at grails.util.Environment.executeForEnvironment(Environment.java:301)
+	at grails.util.Environment.executeForCurrentEnvironment(Environment.java:277)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:262)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:744)
+2013-11-13 12:07:49,490 [localhost-startStop-1] ERROR StackTrace  - Full Stack Trace:
+grails.validation.ValidationException: Validation Error(s) occurred during save():
+- Field error in object 'security.User' on field 'photo': rejected value [null]; codes [security.User.photo.nullable.error.security.User.photo,security.User.photo.nullable.error.photo,security.User.photo.nullable.error.java.io.File,security.User.photo.nullable.error,user.photo.nullable.error.security.User.photo,user.photo.nullable.error.photo,user.photo.nullable.error.java.io.File,user.photo.nullable.error,security.User.photo.nullable.security.User.photo,security.User.photo.nullable.photo,security.User.photo.nullable.java.io.File,security.User.photo.nullable,user.photo.nullable.security.User.photo,user.photo.nullable.photo,user.photo.nullable.java.io.File,user.photo.nullable,nullable.security.User.photo,nullable.photo,nullable.java.io.File,nullable]; arguments [photo,class security.User]; default message [Property [{0}] of class [{1}] cannot be null]
+
+	at BootStrap$_closure1.doCall(BootStrap.groovy:43)
+	at grails.util.Environment.evaluateEnvironmentSpecificBlock(Environment.java:308)
+	at grails.util.Environment.executeForEnvironment(Environment.java:301)
+	at grails.util.Environment.executeForCurrentEnvironment(Environment.java:277)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:262)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:744)
+2013-11-13 12:07:49,490 [localhost-startStop-1] ERROR StackTrace  - Full Stack Trace:
+grails.validation.ValidationException: Validation Error(s) occurred during save():
+- Field error in object 'security.User' on field 'photo': rejected value [null]; codes [security.User.photo.nullable.error.security.User.photo,security.User.photo.nullable.error.photo,security.User.photo.nullable.error.java.io.File,security.User.photo.nullable.error,user.photo.nullable.error.security.User.photo,user.photo.nullable.error.photo,user.photo.nullable.error.java.io.File,user.photo.nullable.error,security.User.photo.nullable.security.User.photo,security.User.photo.nullable.photo,security.User.photo.nullable.java.io.File,security.User.photo.nullable,user.photo.nullable.security.User.photo,user.photo.nullable.photo,user.photo.nullable.java.io.File,user.photo.nullable,nullable.security.User.photo,nullable.photo,nullable.java.io.File,nullable]; arguments [photo,class security.User]; default message [Property [{0}] of class [{1}] cannot be null]
+
+	at BootStrap$_closure1.doCall(BootStrap.groovy:43)
+	at grails.util.Environment.evaluateEnvironmentSpecificBlock(Environment.java:308)
+	at grails.util.Environment.executeForEnvironment(Environment.java:301)
+	at grails.util.Environment.executeForCurrentEnvironment(Environment.java:277)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:262)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:744)
+2013-11-13 12:07:49,490 [localhost-startStop-1] ERROR StackTrace  - Full Stack Trace:
+grails.validation.ValidationException: Validation Error(s) occurred during save():
+- Field error in object 'security.User' on field 'photo': rejected value [null]; codes [security.User.photo.nullable.error.security.User.photo,security.User.photo.nullable.error.photo,security.User.photo.nullable.error.java.io.File,security.User.photo.nullable.error,user.photo.nullable.error.security.User.photo,user.photo.nullable.error.photo,user.photo.nullable.error.java.io.File,user.photo.nullable.error,security.User.photo.nullable.security.User.photo,security.User.photo.nullable.photo,security.User.photo.nullable.java.io.File,security.User.photo.nullable,user.photo.nullable.security.User.photo,user.photo.nullable.photo,user.photo.nullable.java.io.File,user.photo.nullable,nullable.security.User.photo,nullable.photo,nullable.java.io.File,nullable]; arguments [photo,class security.User]; default message [Property [{0}] of class [{1}] cannot be null]
+
+	at BootStrap$_closure1.doCall(BootStrap.groovy:43)
+	at grails.util.Environment.evaluateEnvironmentSpecificBlock(Environment.java:308)
+	at grails.util.Environment.executeForEnvironment(Environment.java:301)
+	at grails.util.Environment.executeForCurrentEnvironment(Environment.java:277)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:262)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:744)
+2013-11-13 12:10:17,184 [localhost-startStop-1] ERROR StackTrace  - Full Stack Trace:
+grails.validation.ValidationException: Validation Error(s) occurred during save():
+- Field error in object 'security.User' on field 'cpf': rejected value [null]; codes [security.User.cpf.nullable.error.security.User.cpf,security.User.cpf.nullable.error.cpf,security.User.cpf.nullable.error.java.lang.String,security.User.cpf.nullable.error,user.cpf.nullable.error.security.User.cpf,user.cpf.nullable.error.cpf,user.cpf.nullable.error.java.lang.String,user.cpf.nullable.error,security.User.cpf.nullable.security.User.cpf,security.User.cpf.nullable.cpf,security.User.cpf.nullable.java.lang.String,security.User.cpf.nullable,user.cpf.nullable.security.User.cpf,user.cpf.nullable.cpf,user.cpf.nullable.java.lang.String,user.cpf.nullable,nullable.security.User.cpf,nullable.cpf,nullable.java.lang.String,nullable]; arguments [cpf,class security.User]; default message [Property [{0}] of class [{1}] cannot be null]
+
+	at org.codehaus.groovy.grails.orm.hibernate.metaclass.AbstractSavePersistentMethod.doInvokeInternal(AbstractSavePersistentMethod.java:190)
+	at org.codehaus.groovy.grails.orm.hibernate.metaclass.AbstractDynamicPersistentMethod.invoke(AbstractDynamicPersistentMethod.java:63)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.springsource.loaded.ri.ReflectiveInterceptor.jlrMethodInvoke(ReflectiveInterceptor.java:1259)
+	at org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSite.invoke(PojoMetaMethodSite.java:189)
+	at org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite.call(PojoMetaMethodSite.java:53)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:45)
+	at org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite.call(PojoMetaMethodSite.java:55)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:124)
+	at org.codehaus.groovy.grails.orm.hibernate.HibernateGormInstanceApi.save(HibernateGormEnhancer.groovy:911)
+	at security.User.save(User.groovy)
+	at security.User$save.call(Unknown Source)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:45)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:108)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:116)
+	at BootStrap$_closure1.doCall(BootStrap.groovy:44)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.springsource.loaded.ri.ReflectiveInterceptor.jlrMethodInvoke(ReflectiveInterceptor.java:1259)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:90)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:233)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1082)
+	at groovy.lang.ExpandoMetaClass.invokeMethod(ExpandoMetaClass.java:1106)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:906)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:956)
+	at groovy.lang.ExpandoMetaClass.invokeMethod(ExpandoMetaClass.java:1106)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:906)
+	at groovy.lang.Closure.call(Closure.java:412)
+	at groovy.lang.Closure.call(Closure.java:406)
+	at grails.util.Environment.evaluateEnvironmentSpecificBlock(Environment.java:308)
+	at grails.util.Environment.executeForEnvironment(Environment.java:301)
+	at grails.util.Environment.executeForCurrentEnvironment(Environment.java:277)
+	at org.codehaus.groovy.grails.commons.DefaultGrailsBootstrapClass.callInit(DefaultGrailsBootstrapClass.java:60)
+	at org.codehaus.groovy.grails.web.context.GrailsConfigUtils.executeGrailsBootstraps(GrailsConfigUtils.java:74)
+	at org.codehaus.groovy.grails.web.context.GrailsContextLoader.initWebApplicationContext(GrailsContextLoader.java:108)
+	at org.springframework.web.context.ContextLoaderListener.contextInitialized(ContextLoaderListener.java:111)
+	at org.apache.catalina.core.StandardContext.listenerStart(StandardContext.java:4939)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5434)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1559)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1549)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:262)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:744)
+2013-11-13 12:10:17,186 [localhost-startStop-1] ERROR StackTrace  - Full Stack Trace:
+grails.validation.ValidationException: Validation Error(s) occurred during save():
+- Field error in object 'security.User' on field 'cpf': rejected value [null]; codes [security.User.cpf.nullable.error.security.User.cpf,security.User.cpf.nullable.error.cpf,security.User.cpf.nullable.error.java.lang.String,security.User.cpf.nullable.error,user.cpf.nullable.error.security.User.cpf,user.cpf.nullable.error.cpf,user.cpf.nullable.error.java.lang.String,user.cpf.nullable.error,security.User.cpf.nullable.security.User.cpf,security.User.cpf.nullable.cpf,security.User.cpf.nullable.java.lang.String,security.User.cpf.nullable,user.cpf.nullable.security.User.cpf,user.cpf.nullable.cpf,user.cpf.nullable.java.lang.String,user.cpf.nullable,nullable.security.User.cpf,nullable.cpf,nullable.java.lang.String,nullable]; arguments [cpf,class security.User]; default message [Property [{0}] of class [{1}] cannot be null]
+
+	at BootStrap$_closure1.doCall(BootStrap.groovy:44)
+	at grails.util.Environment.evaluateEnvironmentSpecificBlock(Environment.java:308)
+	at grails.util.Environment.executeForEnvironment(Environment.java:301)
+	at grails.util.Environment.executeForCurrentEnvironment(Environment.java:277)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:262)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:744)
+2013-11-13 12:10:17,186 [localhost-startStop-1] ERROR StackTrace  - Full Stack Trace:
+grails.validation.ValidationException: Validation Error(s) occurred during save():
+- Field error in object 'security.User' on field 'cpf': rejected value [null]; codes [security.User.cpf.nullable.error.security.User.cpf,security.User.cpf.nullable.error.cpf,security.User.cpf.nullable.error.java.lang.String,security.User.cpf.nullable.error,user.cpf.nullable.error.security.User.cpf,user.cpf.nullable.error.cpf,user.cpf.nullable.error.java.lang.String,user.cpf.nullable.error,security.User.cpf.nullable.security.User.cpf,security.User.cpf.nullable.cpf,security.User.cpf.nullable.java.lang.String,security.User.cpf.nullable,user.cpf.nullable.security.User.cpf,user.cpf.nullable.cpf,user.cpf.nullable.java.lang.String,user.cpf.nullable,nullable.security.User.cpf,nullable.cpf,nullable.java.lang.String,nullable]; arguments [cpf,class security.User]; default message [Property [{0}] of class [{1}] cannot be null]
+
+	at BootStrap$_closure1.doCall(BootStrap.groovy:44)
+	at grails.util.Environment.evaluateEnvironmentSpecificBlock(Environment.java:308)
+	at grails.util.Environment.executeForEnvironment(Environment.java:301)
+	at grails.util.Environment.executeForCurrentEnvironment(Environment.java:277)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:262)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:744)
+2013-11-13 12:10:17,186 [localhost-startStop-1] ERROR StackTrace  - Full Stack Trace:
+grails.validation.ValidationException: Validation Error(s) occurred during save():
+- Field error in object 'security.User' on field 'cpf': rejected value [null]; codes [security.User.cpf.nullable.error.security.User.cpf,security.User.cpf.nullable.error.cpf,security.User.cpf.nullable.error.java.lang.String,security.User.cpf.nullable.error,user.cpf.nullable.error.security.User.cpf,user.cpf.nullable.error.cpf,user.cpf.nullable.error.java.lang.String,user.cpf.nullable.error,security.User.cpf.nullable.security.User.cpf,security.User.cpf.nullable.cpf,security.User.cpf.nullable.java.lang.String,security.User.cpf.nullable,user.cpf.nullable.security.User.cpf,user.cpf.nullable.cpf,user.cpf.nullable.java.lang.String,user.cpf.nullable,nullable.security.User.cpf,nullable.cpf,nullable.java.lang.String,nullable]; arguments [cpf,class security.User]; default message [Property [{0}] of class [{1}] cannot be null]
+
+	at BootStrap$_closure1.doCall(BootStrap.groovy:44)
+	at grails.util.Environment.evaluateEnvironmentSpecificBlock(Environment.java:308)
+	at grails.util.Environment.executeForEnvironment(Environment.java:301)
+	at grails.util.Environment.executeForCurrentEnvironment(Environment.java:277)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:262)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:744)
+2013-11-13 12:10:17,187 [localhost-startStop-1] ERROR StackTrace  - Full Stack Trace:
+grails.validation.ValidationException: Validation Error(s) occurred during save():
+- Field error in object 'security.User' on field 'cpf': rejected value [null]; codes [security.User.cpf.nullable.error.security.User.cpf,security.User.cpf.nullable.error.cpf,security.User.cpf.nullable.error.java.lang.String,security.User.cpf.nullable.error,user.cpf.nullable.error.security.User.cpf,user.cpf.nullable.error.cpf,user.cpf.nullable.error.java.lang.String,user.cpf.nullable.error,security.User.cpf.nullable.security.User.cpf,security.User.cpf.nullable.cpf,security.User.cpf.nullable.java.lang.String,security.User.cpf.nullable,user.cpf.nullable.security.User.cpf,user.cpf.nullable.cpf,user.cpf.nullable.java.lang.String,user.cpf.nullable,nullable.security.User.cpf,nullable.cpf,nullable.java.lang.String,nullable]; arguments [cpf,class security.User]; default message [Property [{0}] of class [{1}] cannot be null]
+
+	at BootStrap$_closure1.doCall(BootStrap.groovy:44)
+	at grails.util.Environment.evaluateEnvironmentSpecificBlock(Environment.java:308)
+	at grails.util.Environment.executeForEnvironment(Environment.java:301)
+	at grails.util.Environment.executeForCurrentEnvironment(Environment.java:277)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:262)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:744)
+2013-11-13 12:10:17,187 [localhost-startStop-1] ERROR StackTrace  - Full Stack Trace:
+grails.validation.ValidationException: Validation Error(s) occurred during save():
+- Field error in object 'security.User' on field 'cpf': rejected value [null]; codes [security.User.cpf.nullable.error.security.User.cpf,security.User.cpf.nullable.error.cpf,security.User.cpf.nullable.error.java.lang.String,security.User.cpf.nullable.error,user.cpf.nullable.error.security.User.cpf,user.cpf.nullable.error.cpf,user.cpf.nullable.error.java.lang.String,user.cpf.nullable.error,security.User.cpf.nullable.security.User.cpf,security.User.cpf.nullable.cpf,security.User.cpf.nullable.java.lang.String,security.User.cpf.nullable,user.cpf.nullable.security.User.cpf,user.cpf.nullable.cpf,user.cpf.nullable.java.lang.String,user.cpf.nullable,nullable.security.User.cpf,nullable.cpf,nullable.java.lang.String,nullable]; arguments [cpf,class security.User]; default message [Property [{0}] of class [{1}] cannot be null]
+
+	at BootStrap$_closure1.doCall(BootStrap.groovy:44)
+	at grails.util.Environment.evaluateEnvironmentSpecificBlock(Environment.java:308)
+	at grails.util.Environment.executeForEnvironment(Environment.java:301)
+	at grails.util.Environment.executeForCurrentEnvironment(Environment.java:277)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:262)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:744)
+2013-11-13 12:10:49,524 [localhost-startStop-1] ERROR StackTrace  - Full Stack Trace:
+grails.validation.ValidationException: Validation Error(s) occurred during save():
+- Field error in object 'security.User' on field 'cpf': rejected value []; codes [security.User.cpf.blank.error.security.User.cpf,security.User.cpf.blank.error.cpf,security.User.cpf.blank.error.java.lang.String,security.User.cpf.blank.error,user.cpf.blank.error.security.User.cpf,user.cpf.blank.error.cpf,user.cpf.blank.error.java.lang.String,user.cpf.blank.error,security.User.cpf.blank.security.User.cpf,security.User.cpf.blank.cpf,security.User.cpf.blank.java.lang.String,security.User.cpf.blank,user.cpf.blank.security.User.cpf,user.cpf.blank.cpf,user.cpf.blank.java.lang.String,user.cpf.blank,blank.security.User.cpf,blank.cpf,blank.java.lang.String,blank]; arguments [cpf,class security.User]; default message [Property [{0}] of class [{1}] cannot be blank]
+
+	at org.codehaus.groovy.grails.orm.hibernate.metaclass.AbstractSavePersistentMethod.doInvokeInternal(AbstractSavePersistentMethod.java:190)
+	at org.codehaus.groovy.grails.orm.hibernate.metaclass.AbstractDynamicPersistentMethod.invoke(AbstractDynamicPersistentMethod.java:63)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.springsource.loaded.ri.ReflectiveInterceptor.jlrMethodInvoke(ReflectiveInterceptor.java:1259)
+	at org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSite.invoke(PojoMetaMethodSite.java:189)
+	at org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite.call(PojoMetaMethodSite.java:53)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:45)
+	at org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite.call(PojoMetaMethodSite.java:55)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:124)
+	at org.codehaus.groovy.grails.orm.hibernate.HibernateGormInstanceApi.save(HibernateGormEnhancer.groovy:911)
+	at security.User.save(User.groovy)
+	at security.User$save.call(Unknown Source)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:45)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:108)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:116)
+	at BootStrap$_closure1.doCall(BootStrap.groovy:44)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.springsource.loaded.ri.ReflectiveInterceptor.jlrMethodInvoke(ReflectiveInterceptor.java:1259)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:90)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:233)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1082)
+	at groovy.lang.ExpandoMetaClass.invokeMethod(ExpandoMetaClass.java:1106)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:906)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:956)
+	at groovy.lang.ExpandoMetaClass.invokeMethod(ExpandoMetaClass.java:1106)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:906)
+	at groovy.lang.Closure.call(Closure.java:412)
+	at groovy.lang.Closure.call(Closure.java:406)
+	at grails.util.Environment.evaluateEnvironmentSpecificBlock(Environment.java:308)
+	at grails.util.Environment.executeForEnvironment(Environment.java:301)
+	at grails.util.Environment.executeForCurrentEnvironment(Environment.java:277)
+	at org.codehaus.groovy.grails.commons.DefaultGrailsBootstrapClass.callInit(DefaultGrailsBootstrapClass.java:60)
+	at org.codehaus.groovy.grails.web.context.GrailsConfigUtils.executeGrailsBootstraps(GrailsConfigUtils.java:74)
+	at org.codehaus.groovy.grails.web.context.GrailsContextLoader.initWebApplicationContext(GrailsContextLoader.java:108)
+	at org.springframework.web.context.ContextLoaderListener.contextInitialized(ContextLoaderListener.java:111)
+	at org.apache.catalina.core.StandardContext.listenerStart(StandardContext.java:4939)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5434)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1559)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1549)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:262)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:744)
+2013-11-13 12:10:49,527 [localhost-startStop-1] ERROR StackTrace  - Full Stack Trace:
+grails.validation.ValidationException: Validation Error(s) occurred during save():
+- Field error in object 'security.User' on field 'cpf': rejected value []; codes [security.User.cpf.blank.error.security.User.cpf,security.User.cpf.blank.error.cpf,security.User.cpf.blank.error.java.lang.String,security.User.cpf.blank.error,user.cpf.blank.error.security.User.cpf,user.cpf.blank.error.cpf,user.cpf.blank.error.java.lang.String,user.cpf.blank.error,security.User.cpf.blank.security.User.cpf,security.User.cpf.blank.cpf,security.User.cpf.blank.java.lang.String,security.User.cpf.blank,user.cpf.blank.security.User.cpf,user.cpf.blank.cpf,user.cpf.blank.java.lang.String,user.cpf.blank,blank.security.User.cpf,blank.cpf,blank.java.lang.String,blank]; arguments [cpf,class security.User]; default message [Property [{0}] of class [{1}] cannot be blank]
+
+	at BootStrap$_closure1.doCall(BootStrap.groovy:44)
+	at grails.util.Environment.evaluateEnvironmentSpecificBlock(Environment.java:308)
+	at grails.util.Environment.executeForEnvironment(Environment.java:301)
+	at grails.util.Environment.executeForCurrentEnvironment(Environment.java:277)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:262)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:744)
+2013-11-13 12:10:49,527 [localhost-startStop-1] ERROR StackTrace  - Full Stack Trace:
+grails.validation.ValidationException: Validation Error(s) occurred during save():
+- Field error in object 'security.User' on field 'cpf': rejected value []; codes [security.User.cpf.blank.error.security.User.cpf,security.User.cpf.blank.error.cpf,security.User.cpf.blank.error.java.lang.String,security.User.cpf.blank.error,user.cpf.blank.error.security.User.cpf,user.cpf.blank.error.cpf,user.cpf.blank.error.java.lang.String,user.cpf.blank.error,security.User.cpf.blank.security.User.cpf,security.User.cpf.blank.cpf,security.User.cpf.blank.java.lang.String,security.User.cpf.blank,user.cpf.blank.security.User.cpf,user.cpf.blank.cpf,user.cpf.blank.java.lang.String,user.cpf.blank,blank.security.User.cpf,blank.cpf,blank.java.lang.String,blank]; arguments [cpf,class security.User]; default message [Property [{0}] of class [{1}] cannot be blank]
+
+	at BootStrap$_closure1.doCall(BootStrap.groovy:44)
+	at grails.util.Environment.evaluateEnvironmentSpecificBlock(Environment.java:308)
+	at grails.util.Environment.executeForEnvironment(Environment.java:301)
+	at grails.util.Environment.executeForCurrentEnvironment(Environment.java:277)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:262)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:744)
+2013-11-13 12:10:49,527 [localhost-startStop-1] ERROR StackTrace  - Full Stack Trace:
+grails.validation.ValidationException: Validation Error(s) occurred during save():
+- Field error in object 'security.User' on field 'cpf': rejected value []; codes [security.User.cpf.blank.error.security.User.cpf,security.User.cpf.blank.error.cpf,security.User.cpf.blank.error.java.lang.String,security.User.cpf.blank.error,user.cpf.blank.error.security.User.cpf,user.cpf.blank.error.cpf,user.cpf.blank.error.java.lang.String,user.cpf.blank.error,security.User.cpf.blank.security.User.cpf,security.User.cpf.blank.cpf,security.User.cpf.blank.java.lang.String,security.User.cpf.blank,user.cpf.blank.security.User.cpf,user.cpf.blank.cpf,user.cpf.blank.java.lang.String,user.cpf.blank,blank.security.User.cpf,blank.cpf,blank.java.lang.String,blank]; arguments [cpf,class security.User]; default message [Property [{0}] of class [{1}] cannot be blank]
+
+	at BootStrap$_closure1.doCall(BootStrap.groovy:44)
+	at grails.util.Environment.evaluateEnvironmentSpecificBlock(Environment.java:308)
+	at grails.util.Environment.executeForEnvironment(Environment.java:301)
+	at grails.util.Environment.executeForCurrentEnvironment(Environment.java:277)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:262)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:744)
+2013-11-13 12:10:49,527 [localhost-startStop-1] ERROR StackTrace  - Full Stack Trace:
+grails.validation.ValidationException: Validation Error(s) occurred during save():
+- Field error in object 'security.User' on field 'cpf': rejected value []; codes [security.User.cpf.blank.error.security.User.cpf,security.User.cpf.blank.error.cpf,security.User.cpf.blank.error.java.lang.String,security.User.cpf.blank.error,user.cpf.blank.error.security.User.cpf,user.cpf.blank.error.cpf,user.cpf.blank.error.java.lang.String,user.cpf.blank.error,security.User.cpf.blank.security.User.cpf,security.User.cpf.blank.cpf,security.User.cpf.blank.java.lang.String,security.User.cpf.blank,user.cpf.blank.security.User.cpf,user.cpf.blank.cpf,user.cpf.blank.java.lang.String,user.cpf.blank,blank.security.User.cpf,blank.cpf,blank.java.lang.String,blank]; arguments [cpf,class security.User]; default message [Property [{0}] of class [{1}] cannot be blank]
+
+	at BootStrap$_closure1.doCall(BootStrap.groovy:44)
+	at grails.util.Environment.evaluateEnvironmentSpecificBlock(Environment.java:308)
+	at grails.util.Environment.executeForEnvironment(Environment.java:301)
+	at grails.util.Environment.executeForCurrentEnvironment(Environment.java:277)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:262)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:744)
+2013-11-13 12:10:49,527 [localhost-startStop-1] ERROR StackTrace  - Full Stack Trace:
+grails.validation.ValidationException: Validation Error(s) occurred during save():
+- Field error in object 'security.User' on field 'cpf': rejected value []; codes [security.User.cpf.blank.error.security.User.cpf,security.User.cpf.blank.error.cpf,security.User.cpf.blank.error.java.lang.String,security.User.cpf.blank.error,user.cpf.blank.error.security.User.cpf,user.cpf.blank.error.cpf,user.cpf.blank.error.java.lang.String,user.cpf.blank.error,security.User.cpf.blank.security.User.cpf,security.User.cpf.blank.cpf,security.User.cpf.blank.java.lang.String,security.User.cpf.blank,user.cpf.blank.security.User.cpf,user.cpf.blank.cpf,user.cpf.blank.java.lang.String,user.cpf.blank,blank.security.User.cpf,blank.cpf,blank.java.lang.String,blank]; arguments [cpf,class security.User]; default message [Property [{0}] of class [{1}] cannot be blank]
+
+	at BootStrap$_closure1.doCall(BootStrap.groovy:44)
+	at grails.util.Environment.evaluateEnvironmentSpecificBlock(Environment.java:308)
+	at grails.util.Environment.executeForEnvironment(Environment.java:301)
+	at grails.util.Environment.executeForCurrentEnvironment(Environment.java:277)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:262)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:744)
+2013-11-13 12:11:23,837 [localhost-startStop-1] ERROR StackTrace  - Full Stack Trace:
+grails.validation.ValidationException: Validation Error(s) occurred during save():
+- Field error in object 'security.User' on field 'number': rejected value [null]; codes [security.User.number.nullable.error.security.User.number,security.User.number.nullable.error.number,security.User.number.nullable.error.java.lang.Integer,security.User.number.nullable.error,user.number.nullable.error.security.User.number,user.number.nullable.error.number,user.number.nullable.error.java.lang.Integer,user.number.nullable.error,security.User.number.nullable.security.User.number,security.User.number.nullable.number,security.User.number.nullable.java.lang.Integer,security.User.number.nullable,user.number.nullable.security.User.number,user.number.nullable.number,user.number.nullable.java.lang.Integer,user.number.nullable,nullable.security.User.number,nullable.number,nullable.java.lang.Integer,nullable]; arguments [number,class security.User]; default message [Property [{0}] of class [{1}] cannot be null]
+
+	at org.codehaus.groovy.grails.orm.hibernate.metaclass.AbstractSavePersistentMethod.doInvokeInternal(AbstractSavePersistentMethod.java:190)
+	at org.codehaus.groovy.grails.orm.hibernate.metaclass.AbstractDynamicPersistentMethod.invoke(AbstractDynamicPersistentMethod.java:63)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.springsource.loaded.ri.ReflectiveInterceptor.jlrMethodInvoke(ReflectiveInterceptor.java:1259)
+	at org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSite.invoke(PojoMetaMethodSite.java:189)
+	at org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite.call(PojoMetaMethodSite.java:53)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:45)
+	at org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite.call(PojoMetaMethodSite.java:55)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:124)
+	at org.codehaus.groovy.grails.orm.hibernate.HibernateGormInstanceApi.save(HibernateGormEnhancer.groovy:911)
+	at security.User.save(User.groovy)
+	at security.User$save.call(Unknown Source)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:45)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:108)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:116)
+	at BootStrap$_closure1.doCall(BootStrap.groovy:44)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.springsource.loaded.ri.ReflectiveInterceptor.jlrMethodInvoke(ReflectiveInterceptor.java:1259)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:90)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:233)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1082)
+	at groovy.lang.ExpandoMetaClass.invokeMethod(ExpandoMetaClass.java:1106)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:906)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:956)
+	at groovy.lang.ExpandoMetaClass.invokeMethod(ExpandoMetaClass.java:1106)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:906)
+	at groovy.lang.Closure.call(Closure.java:412)
+	at groovy.lang.Closure.call(Closure.java:406)
+	at grails.util.Environment.evaluateEnvironmentSpecificBlock(Environment.java:308)
+	at grails.util.Environment.executeForEnvironment(Environment.java:301)
+	at grails.util.Environment.executeForCurrentEnvironment(Environment.java:277)
+	at org.codehaus.groovy.grails.commons.DefaultGrailsBootstrapClass.callInit(DefaultGrailsBootstrapClass.java:60)
+	at org.codehaus.groovy.grails.web.context.GrailsConfigUtils.executeGrailsBootstraps(GrailsConfigUtils.java:74)
+	at org.codehaus.groovy.grails.web.context.GrailsContextLoader.initWebApplicationContext(GrailsContextLoader.java:108)
+	at org.springframework.web.context.ContextLoaderListener.contextInitialized(ContextLoaderListener.java:111)
+	at org.apache.catalina.core.StandardContext.listenerStart(StandardContext.java:4939)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5434)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1559)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1549)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:262)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:744)
+2013-11-13 12:11:23,839 [localhost-startStop-1] ERROR StackTrace  - Full Stack Trace:
+grails.validation.ValidationException: Validation Error(s) occurred during save():
+- Field error in object 'security.User' on field 'number': rejected value [null]; codes [security.User.number.nullable.error.security.User.number,security.User.number.nullable.error.number,security.User.number.nullable.error.java.lang.Integer,security.User.number.nullable.error,user.number.nullable.error.security.User.number,user.number.nullable.error.number,user.number.nullable.error.java.lang.Integer,user.number.nullable.error,security.User.number.nullable.security.User.number,security.User.number.nullable.number,security.User.number.nullable.java.lang.Integer,security.User.number.nullable,user.number.nullable.security.User.number,user.number.nullable.number,user.number.nullable.java.lang.Integer,user.number.nullable,nullable.security.User.number,nullable.number,nullable.java.lang.Integer,nullable]; arguments [number,class security.User]; default message [Property [{0}] of class [{1}] cannot be null]
+
+	at BootStrap$_closure1.doCall(BootStrap.groovy:44)
+	at grails.util.Environment.evaluateEnvironmentSpecificBlock(Environment.java:308)
+	at grails.util.Environment.executeForEnvironment(Environment.java:301)
+	at grails.util.Environment.executeForCurrentEnvironment(Environment.java:277)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:262)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:744)
+2013-11-13 12:11:23,839 [localhost-startStop-1] ERROR StackTrace  - Full Stack Trace:
+grails.validation.ValidationException: Validation Error(s) occurred during save():
+- Field error in object 'security.User' on field 'number': rejected value [null]; codes [security.User.number.nullable.error.security.User.number,security.User.number.nullable.error.number,security.User.number.nullable.error.java.lang.Integer,security.User.number.nullable.error,user.number.nullable.error.security.User.number,user.number.nullable.error.number,user.number.nullable.error.java.lang.Integer,user.number.nullable.error,security.User.number.nullable.security.User.number,security.User.number.nullable.number,security.User.number.nullable.java.lang.Integer,security.User.number.nullable,user.number.nullable.security.User.number,user.number.nullable.number,user.number.nullable.java.lang.Integer,user.number.nullable,nullable.security.User.number,nullable.number,nullable.java.lang.Integer,nullable]; arguments [number,class security.User]; default message [Property [{0}] of class [{1}] cannot be null]
+
+	at BootStrap$_closure1.doCall(BootStrap.groovy:44)
+	at grails.util.Environment.evaluateEnvironmentSpecificBlock(Environment.java:308)
+	at grails.util.Environment.executeForEnvironment(Environment.java:301)
+	at grails.util.Environment.executeForCurrentEnvironment(Environment.java:277)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:262)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:744)
+2013-11-13 12:11:23,839 [localhost-startStop-1] ERROR StackTrace  - Full Stack Trace:
+grails.validation.ValidationException: Validation Error(s) occurred during save():
+- Field error in object 'security.User' on field 'number': rejected value [null]; codes [security.User.number.nullable.error.security.User.number,security.User.number.nullable.error.number,security.User.number.nullable.error.java.lang.Integer,security.User.number.nullable.error,user.number.nullable.error.security.User.number,user.number.nullable.error.number,user.number.nullable.error.java.lang.Integer,user.number.nullable.error,security.User.number.nullable.security.User.number,security.User.number.nullable.number,security.User.number.nullable.java.lang.Integer,security.User.number.nullable,user.number.nullable.security.User.number,user.number.nullable.number,user.number.nullable.java.lang.Integer,user.number.nullable,nullable.security.User.number,nullable.number,nullable.java.lang.Integer,nullable]; arguments [number,class security.User]; default message [Property [{0}] of class [{1}] cannot be null]
+
+	at BootStrap$_closure1.doCall(BootStrap.groovy:44)
+	at grails.util.Environment.evaluateEnvironmentSpecificBlock(Environment.java:308)
+	at grails.util.Environment.executeForEnvironment(Environment.java:301)
+	at grails.util.Environment.executeForCurrentEnvironment(Environment.java:277)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:262)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:744)
+2013-11-13 12:11:23,839 [localhost-startStop-1] ERROR StackTrace  - Full Stack Trace:
+grails.validation.ValidationException: Validation Error(s) occurred during save():
+- Field error in object 'security.User' on field 'number': rejected value [null]; codes [security.User.number.nullable.error.security.User.number,security.User.number.nullable.error.number,security.User.number.nullable.error.java.lang.Integer,security.User.number.nullable.error,user.number.nullable.error.security.User.number,user.number.nullable.error.number,user.number.nullable.error.java.lang.Integer,user.number.nullable.error,security.User.number.nullable.security.User.number,security.User.number.nullable.number,security.User.number.nullable.java.lang.Integer,security.User.number.nullable,user.number.nullable.security.User.number,user.number.nullable.number,user.number.nullable.java.lang.Integer,user.number.nullable,nullable.security.User.number,nullable.number,nullable.java.lang.Integer,nullable]; arguments [number,class security.User]; default message [Property [{0}] of class [{1}] cannot be null]
+
+	at BootStrap$_closure1.doCall(BootStrap.groovy:44)
+	at grails.util.Environment.evaluateEnvironmentSpecificBlock(Environment.java:308)
+	at grails.util.Environment.executeForEnvironment(Environment.java:301)
+	at grails.util.Environment.executeForCurrentEnvironment(Environment.java:277)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:262)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:744)
+2013-11-13 12:11:23,839 [localhost-startStop-1] ERROR StackTrace  - Full Stack Trace:
+grails.validation.ValidationException: Validation Error(s) occurred during save():
+- Field error in object 'security.User' on field 'number': rejected value [null]; codes [security.User.number.nullable.error.security.User.number,security.User.number.nullable.error.number,security.User.number.nullable.error.java.lang.Integer,security.User.number.nullable.error,user.number.nullable.error.security.User.number,user.number.nullable.error.number,user.number.nullable.error.java.lang.Integer,user.number.nullable.error,security.User.number.nullable.security.User.number,security.User.number.nullable.number,security.User.number.nullable.java.lang.Integer,security.User.number.nullable,user.number.nullable.security.User.number,user.number.nullable.number,user.number.nullable.java.lang.Integer,user.number.nullable,nullable.security.User.number,nullable.number,nullable.java.lang.Integer,nullable]; arguments [number,class security.User]; default message [Property [{0}] of class [{1}] cannot be null]
+
+	at BootStrap$_closure1.doCall(BootStrap.groovy:44)
+	at grails.util.Environment.evaluateEnvironmentSpecificBlock(Environment.java:308)
+	at grails.util.Environment.executeForEnvironment(Environment.java:301)
+	at grails.util.Environment.executeForCurrentEnvironment(Environment.java:277)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:262)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:744)
+2013-11-13 12:11:57,978 [localhost-startStop-1] ERROR StackTrace  - Full Stack Trace:
+grails.validation.ValidationException: Validation Error(s) occurred during save():
+- Field error in object 'security.User' on field 'state': rejected value [null]; codes [security.User.state.nullable.error.security.User.state,security.User.state.nullable.error.state,security.User.state.nullable.error.healthcare.State,security.User.state.nullable.error,user.state.nullable.error.security.User.state,user.state.nullable.error.state,user.state.nullable.error.healthcare.State,user.state.nullable.error,security.User.state.nullable.security.User.state,security.User.state.nullable.state,security.User.state.nullable.healthcare.State,security.User.state.nullable,user.state.nullable.security.User.state,user.state.nullable.state,user.state.nullable.healthcare.State,user.state.nullable,nullable.security.User.state,nullable.state,nullable.healthcare.State,nullable]; arguments [state,class security.User]; default message [Property [{0}] of class [{1}] cannot be null]
+
+	at org.codehaus.groovy.grails.orm.hibernate.metaclass.AbstractSavePersistentMethod.doInvokeInternal(AbstractSavePersistentMethod.java:190)
+	at org.codehaus.groovy.grails.orm.hibernate.metaclass.AbstractDynamicPersistentMethod.invoke(AbstractDynamicPersistentMethod.java:63)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.springsource.loaded.ri.ReflectiveInterceptor.jlrMethodInvoke(ReflectiveInterceptor.java:1259)
+	at org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite$PojoCachedMethodSite.invoke(PojoMetaMethodSite.java:189)
+	at org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite.call(PojoMetaMethodSite.java:53)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:45)
+	at org.codehaus.groovy.runtime.callsite.PojoMetaMethodSite.call(PojoMetaMethodSite.java:55)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:124)
+	at org.codehaus.groovy.grails.orm.hibernate.HibernateGormInstanceApi.save(HibernateGormEnhancer.groovy:911)
+	at security.User.save(User.groovy)
+	at security.User$save.call(Unknown Source)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:45)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:108)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:116)
+	at BootStrap$_closure1.doCall(BootStrap.groovy:44)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.springsource.loaded.ri.ReflectiveInterceptor.jlrMethodInvoke(ReflectiveInterceptor.java:1259)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:90)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:233)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1082)
+	at groovy.lang.ExpandoMetaClass.invokeMethod(ExpandoMetaClass.java:1106)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:906)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:956)
+	at groovy.lang.ExpandoMetaClass.invokeMethod(ExpandoMetaClass.java:1106)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:906)
+	at groovy.lang.Closure.call(Closure.java:412)
+	at groovy.lang.Closure.call(Closure.java:406)
+	at grails.util.Environment.evaluateEnvironmentSpecificBlock(Environment.java:308)
+	at grails.util.Environment.executeForEnvironment(Environment.java:301)
+	at grails.util.Environment.executeForCurrentEnvironment(Environment.java:277)
+	at org.codehaus.groovy.grails.commons.DefaultGrailsBootstrapClass.callInit(DefaultGrailsBootstrapClass.java:60)
+	at org.codehaus.groovy.grails.web.context.GrailsConfigUtils.executeGrailsBootstraps(GrailsConfigUtils.java:74)
+	at org.codehaus.groovy.grails.web.context.GrailsContextLoader.initWebApplicationContext(GrailsContextLoader.java:108)
+	at org.springframework.web.context.ContextLoaderListener.contextInitialized(ContextLoaderListener.java:111)
+	at org.apache.catalina.core.StandardContext.listenerStart(StandardContext.java:4939)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5434)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1559)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1549)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:262)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:744)
+2013-11-13 12:11:57,981 [localhost-startStop-1] ERROR StackTrace  - Full Stack Trace:
+grails.validation.ValidationException: Validation Error(s) occurred during save():
+- Field error in object 'security.User' on field 'state': rejected value [null]; codes [security.User.state.nullable.error.security.User.state,security.User.state.nullable.error.state,security.User.state.nullable.error.healthcare.State,security.User.state.nullable.error,user.state.nullable.error.security.User.state,user.state.nullable.error.state,user.state.nullable.error.healthcare.State,user.state.nullable.error,security.User.state.nullable.security.User.state,security.User.state.nullable.state,security.User.state.nullable.healthcare.State,security.User.state.nullable,user.state.nullable.security.User.state,user.state.nullable.state,user.state.nullable.healthcare.State,user.state.nullable,nullable.security.User.state,nullable.state,nullable.healthcare.State,nullable]; arguments [state,class security.User]; default message [Property [{0}] of class [{1}] cannot be null]
+
+	at BootStrap$_closure1.doCall(BootStrap.groovy:44)
+	at grails.util.Environment.evaluateEnvironmentSpecificBlock(Environment.java:308)
+	at grails.util.Environment.executeForEnvironment(Environment.java:301)
+	at grails.util.Environment.executeForCurrentEnvironment(Environment.java:277)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:262)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:744)
+2013-11-13 12:11:57,981 [localhost-startStop-1] ERROR StackTrace  - Full Stack Trace:
+grails.validation.ValidationException: Validation Error(s) occurred during save():
+- Field error in object 'security.User' on field 'state': rejected value [null]; codes [security.User.state.nullable.error.security.User.state,security.User.state.nullable.error.state,security.User.state.nullable.error.healthcare.State,security.User.state.nullable.error,user.state.nullable.error.security.User.state,user.state.nullable.error.state,user.state.nullable.error.healthcare.State,user.state.nullable.error,security.User.state.nullable.security.User.state,security.User.state.nullable.state,security.User.state.nullable.healthcare.State,security.User.state.nullable,user.state.nullable.security.User.state,user.state.nullable.state,user.state.nullable.healthcare.State,user.state.nullable,nullable.security.User.state,nullable.state,nullable.healthcare.State,nullable]; arguments [state,class security.User]; default message [Property [{0}] of class [{1}] cannot be null]
+
+	at BootStrap$_closure1.doCall(BootStrap.groovy:44)
+	at grails.util.Environment.evaluateEnvironmentSpecificBlock(Environment.java:308)
+	at grails.util.Environment.executeForEnvironment(Environment.java:301)
+	at grails.util.Environment.executeForCurrentEnvironment(Environment.java:277)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:262)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:744)
+2013-11-13 12:11:57,981 [localhost-startStop-1] ERROR StackTrace  - Full Stack Trace:
+grails.validation.ValidationException: Validation Error(s) occurred during save():
+- Field error in object 'security.User' on field 'state': rejected value [null]; codes [security.User.state.nullable.error.security.User.state,security.User.state.nullable.error.state,security.User.state.nullable.error.healthcare.State,security.User.state.nullable.error,user.state.nullable.error.security.User.state,user.state.nullable.error.state,user.state.nullable.error.healthcare.State,user.state.nullable.error,security.User.state.nullable.security.User.state,security.User.state.nullable.state,security.User.state.nullable.healthcare.State,security.User.state.nullable,user.state.nullable.security.User.state,user.state.nullable.state,user.state.nullable.healthcare.State,user.state.nullable,nullable.security.User.state,nullable.state,nullable.healthcare.State,nullable]; arguments [state,class security.User]; default message [Property [{0}] of class [{1}] cannot be null]
+
+	at BootStrap$_closure1.doCall(BootStrap.groovy:44)
+	at grails.util.Environment.evaluateEnvironmentSpecificBlock(Environment.java:308)
+	at grails.util.Environment.executeForEnvironment(Environment.java:301)
+	at grails.util.Environment.executeForCurrentEnvironment(Environment.java:277)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:262)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:744)
+2013-11-13 12:11:57,981 [localhost-startStop-1] ERROR StackTrace  - Full Stack Trace:
+grails.validation.ValidationException: Validation Error(s) occurred during save():
+- Field error in object 'security.User' on field 'state': rejected value [null]; codes [security.User.state.nullable.error.security.User.state,security.User.state.nullable.error.state,security.User.state.nullable.error.healthcare.State,security.User.state.nullable.error,user.state.nullable.error.security.User.state,user.state.nullable.error.state,user.state.nullable.error.healthcare.State,user.state.nullable.error,security.User.state.nullable.security.User.state,security.User.state.nullable.state,security.User.state.nullable.healthcare.State,security.User.state.nullable,user.state.nullable.security.User.state,user.state.nullable.state,user.state.nullable.healthcare.State,user.state.nullable,nullable.security.User.state,nullable.state,nullable.healthcare.State,nullable]; arguments [state,class security.User]; default message [Property [{0}] of class [{1}] cannot be null]
+
+	at BootStrap$_closure1.doCall(BootStrap.groovy:44)
+	at grails.util.Environment.evaluateEnvironmentSpecificBlock(Environment.java:308)
+	at grails.util.Environment.executeForEnvironment(Environment.java:301)
+	at grails.util.Environment.executeForCurrentEnvironment(Environment.java:277)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:262)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:744)
+2013-11-13 12:11:57,981 [localhost-startStop-1] ERROR StackTrace  - Full Stack Trace:
+grails.validation.ValidationException: Validation Error(s) occurred during save():
+- Field error in object 'security.User' on field 'state': rejected value [null]; codes [security.User.state.nullable.error.security.User.state,security.User.state.nullable.error.state,security.User.state.nullable.error.healthcare.State,security.User.state.nullable.error,user.state.nullable.error.security.User.state,user.state.nullable.error.state,user.state.nullable.error.healthcare.State,user.state.nullable.error,security.User.state.nullable.security.User.state,security.User.state.nullable.state,security.User.state.nullable.healthcare.State,security.User.state.nullable,user.state.nullable.security.User.state,user.state.nullable.state,user.state.nullable.healthcare.State,user.state.nullable,nullable.security.User.state,nullable.state,nullable.healthcare.State,nullable]; arguments [state,class security.User]; default message [Property [{0}] of class [{1}] cannot be null]
+
+	at BootStrap$_closure1.doCall(BootStrap.groovy:44)
+	at grails.util.Environment.evaluateEnvironmentSpecificBlock(Environment.java:308)
+	at grails.util.Environment.executeForEnvironment(Environment.java:301)
+	at grails.util.Environment.executeForCurrentEnvironment(Environment.java:277)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:262)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:744)

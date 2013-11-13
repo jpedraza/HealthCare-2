@@ -1,6 +1,10 @@
 package security
 
-class User {
+import healthcare.Gender
+import healthcare.State
+import healthcare.MartialStatus
+
+abstract class User {
 
 	transient springSecurityService
 
@@ -10,12 +14,41 @@ class User {
 	boolean accountExpired
 	boolean accountLocked
 	boolean passwordExpired
+	
+	//General
+	String firstName;
+	String lastName;
+	String email;
+	Date birthDate
+	Gender gender;
+	String cpf;
+	String rg;
+	String fatherName
+	String motherName
+	
+	MartialStatus martialStatus
+	
+	//Contact	
+	String phone
+	String celphone
+	String contactPhone	
+	
+	//Adress
+	String address
+	Integer number
+	String complement
+	String city
+	State state;
+	String zipCode
+	
+	File photo	
 
 	static transients = ['springSecurityService']
 
 	static constraints = {
-		username blank: false, unique: true
-		password blank: false
+		username(blank: false, unique: true)
+		password(blank: false)
+		
 	}
 
 	static mapping = {
