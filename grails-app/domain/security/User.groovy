@@ -46,8 +46,9 @@ abstract class User {
 	static transients = ['springSecurityService']
 
 	static constraints = {
-		username(blank: false, unique: true)
-		password(blank: false)
+		username(unique: true)
+		password()
+		photo(nullable:true)
 		
 	}
 

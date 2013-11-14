@@ -109,3 +109,6 @@ grails.plugin.springsecurity.controllerAnnotations.staticRules = [
 grails.gorm.default.constraints = {
 	'*'(nullable: false, blank: false)
 }
+
+grails.plugins.twitterbootstrap.fixtaglib = true
+//grails.plugins.twitterbootstrap.defaultBundle = 'bundle_bootstrap'

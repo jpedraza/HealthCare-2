@@ -1,7 +1,9 @@
 
 import security.Role
 import security.UserRole
-import healthcare.Patient
+import security.User
+import healthcare.Speciality;
+import healthcare.Staff
 import healthcare.Gender
 import healthcare.State
 import healthcare.MartialStatus
@@ -17,7 +19,7 @@ class BootStrap {
         def userRole = new Role(authority: 'ROLE_USER').save(flush: true)
 		assert Role.count() == 2
 
-        def testUser = new Patient()
+        def testUser = new Staff()
 		testUser.username = 'testador'
 		testUser.password = 'testador'
 		testUser.firstName = 'testador'
@@ -40,6 +42,8 @@ class BootStrap {
 		testUser.state = State.MinasGerais
 		testUser.zipCode = 'testador'		
 		testUser.photo = new File('files/teste.txt')		
+		testUser.identification = 'testador'
+		testUser.speciality = Speciality.Speciality1
         testUser.save(flush: true, failOnError:true)
 		assert User.count() == 1
 

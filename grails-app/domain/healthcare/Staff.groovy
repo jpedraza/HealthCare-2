@@ -7,11 +7,12 @@ class Staff extends User {
 	
 	String identification
 	
-	Speciality Speciality
+	Speciality speciality
 	
 	static hasMany = [appointments: Appointment]
 
     static constraints = {
 		identification(unique: true)
+		appointments(nullable: true)
     }
 }
