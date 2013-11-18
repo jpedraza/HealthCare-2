@@ -2,7 +2,6 @@
 <html>
 	<head>
 		<meta name="layout" content="main" />
-		<r:require modules="bootstrap" />
 	</head>
 
 	<body>
@@ -10,7 +9,7 @@
 		<div class="jumbotron">
 			<div class="container">
 				<h1>Welcome to the Healthcare System</h1>
-				<sec:ifLoggedIn><p>VOCE TA LOGADO FDP</p></sec:ifLoggedIn>
+				<sec:ifLoggedIn><p>VOCE TA LOGADO</p></sec:ifLoggedIn>
 				<a href="logout">Logout</a>
 				<p>
 					<a class="btn btn-primary btn-lg">Learn more »</a>
@@ -42,10 +41,6 @@
 					</p>
 				</div>
 			</div>
-			<hr>
-			<footer>
-				<p>© Ufscar 2013</p>
-			</footer>
 		</div>
 		<!-- /container -->	
 	</body>

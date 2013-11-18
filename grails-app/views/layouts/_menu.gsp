@@ -35,7 +35,7 @@
 									&nbsp;&nbsp;Settings
 							</a></li>
 							<li class="divider"></li>
-							<li><a href="logout"> <i class="glyphicon glyphicon-log-out"></i>
+							<li><a href="${createLink(controller: 'logout')}" > <i class="glyphicon glyphicon-log-out"></i>
 									&nbsp;&nbsp;Logout
 							</a></li>
 						</ul>

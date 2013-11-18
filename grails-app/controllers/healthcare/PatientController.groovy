@@ -44,6 +44,25 @@ class PatientController {
 
         [patientInstance: patientInstance]
     }
+	
+	def showIdentification() {		
+		def patientInstance = Patient.findByIdentification(params.patientIdentification)
+		def staffInstance = Staff.get(params.id as Long)
+		
+		if (!staffInstance) {
+			flash.message = message(code: 'default.not.found.message', args: [message(code: 'staff.label', default: 'Staff'), params.staffIdentification])
+			redirect(uri: "/")
+			return
+		}
+		
+		if (!patientInstance) {
+			flash.message = message(code: 'default.not.found.message', args: [message(code: 'patient.label', default: 'Patient'), params.patientIdentification])
+			redirect(controller: 'staff', action: "show", id: staffInstance.id)
+			return
+		}
+		
+		redirect (action: "show", id: patientInstance.id)
+	}
 
     def edit(Long id) {
         def patientInstance = Patient.get(id)
