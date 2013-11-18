@@ -3,9 +3,9 @@ package healthcare
 import grails.plugin.springsecurity.annotation.Secured
 import org.springframework.dao.DataIntegrityViolationException
 
-
-@Secured(['ROLE_ADMIN'])	
+	
 class StaffController {
+	def springSecurityService
 
     static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
 
@@ -34,6 +34,7 @@ class StaffController {
     }
 
     def show(Long id) {
+		System.out.println params
         def staffInstance = Staff.get(id)
         if (!staffInstance) {
             flash.message = message(code: 'default.not.found.message', args: [message(code: 'staff.label', default: 'Staff'), id])
@@ -43,6 +44,18 @@ class StaffController {
 
         [staffInstance: staffInstance]
     }
+	
+	@Secured(['ROLE_ADMIN'])
+	def showCurrent() {
+		def staffInstance = (Staff)springSecurityService.currentUser
+		if (!staffInstance) {
+			flash.message = message(code: 'default.not.found.message', args: [message(code: 'staff.label', default: 'Staff')])
+			redirect(uri: '/')
+			return
+		}
+
+		render(view: "show", model: [staffInstance: staffInstance])
+	}
 
     def edit(Long id) {
         def staffInstance = Staff.get(id)
@@ -82,24 +95,5 @@ class StaffController {
 
         flash.message = message(code: 'default.updated.message', args: [message(code: 'staff.label', default: 'Staff'), staffInstance.id])
         redirect(action: "show", id: staffInstance.id)
-    }
-
-    def delete(Long id) {
-        def staffInstance = Staff.get(id)
-        if (!staffInstance) {
-            flash.message = message(code: 'default.not.found.message', args: [message(code: 'staff.label', default: 'Staff'), id])
-            redirect(action: "list")
-            return
-        }
-
-        try {
-            staffInstance.delete(flush: true)
-            flash.message = message(code: 'default.deleted.message', args: [message(code: 'staff.label', default: 'Staff'), id])
-            redirect(action: "list")
-        }
-        catch (DataIntegrityViolationException e) {
-            flash.message = message(code: 'default.not.deleted.message', args: [message(code: 'staff.label', default: 'Staff'), id])
-            redirect(action: "show", id: id)
-        }
     }
 }

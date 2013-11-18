@@ -56,8 +56,11 @@
 							<li><a href="#">Consult</a></li>
 							<li><a href="#">Diagnosis</a></li>
 							<li><a href="#">Prescription</a></li>
-							<li>Staff Menu</li>
-							<li><a href="#">Insert</a><a href="#">Edit</a></li>
+							<sec:ifAllGranted roles="ROLE_ADMIN">
+								<li>Staff Menu</li>
+								<li><a href="#">Insert</a></li>
+								<li><a href="#">Edit</a></li>
+							</sec:ifAllGranted>
 						</ul>
 					</div>
 					<!--/.well -->

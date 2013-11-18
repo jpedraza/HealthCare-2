@@ -9,11 +9,6 @@
 		<div class="jumbotron">
 			<div class="container">
 				<h1>Welcome to the Healthcare System</h1>
-				<sec:ifLoggedIn><p>VOCE TA LOGADO</p></sec:ifLoggedIn>
-				<a href="logout">Logout</a>
-				<p>
-					<a class="btn btn-primary btn-lg">Learn more »</a>
-				</p>
 			</div>
 		</div>
 		<div class="container">

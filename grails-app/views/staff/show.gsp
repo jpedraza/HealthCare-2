@@ -19,7 +19,7 @@
 						<h4 class="modal-title" id="myModalLabel">Search Patient</h4>
 					</div>
 					<g:form controller="patient" action="showIdentification" >
-						<g:hiddenField name="id" value="${params.id}"/>
+						<g:hiddenField name="id" value="${staffInstance.id}"/>
 						<div class="modal-body">
 							<div class="form-group">
 								<div class="controls fieldcontain ${hasErrors(bean: patientInstance, field: 'identification', 'error')} required">

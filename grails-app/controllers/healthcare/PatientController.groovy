@@ -5,8 +5,8 @@ import grails.plugin.springsecurity.annotation.Secured
 import org.springframework.dao.DataIntegrityViolationException
 
 
-@Secured(['ROLE_ADMIN'])
 class PatientController {
+	def springSecurityService
 
     static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
 
@@ -33,7 +33,20 @@ class PatientController {
         flash.message = message(code: 'default.created.message', args: [message(code: 'patient.label', default: 'Patient'), patientInstance.id])
         redirect(action: "show", id: patientInstance.id)
     }
+	
+	@Secured(['ROLE_USER'])
+	def showCurrent() {
+		def patientInstance = (Patient)springSecurityService.currentUser
+		if (!patientInstance) {
+			flash.message = message(code: 'default.not.found.message', args: [message(code: 'patient.label', default: 'Patient')])
+			redirect(uri: '/')
+			return
+		}
 
+		render(view: "show", model: [staffInstance: patientInstance])
+	}
+
+	@Secured(['ROLE_ADMIN'])
     def show(Long id) {
         def patientInstance = Patient.get(id)
         if (!patientInstance) {
@@ -45,9 +58,11 @@ class PatientController {
         [patientInstance: patientInstance]
     }
 	
-	def showIdentification() {		
+	@Secured(['ROLE_ADMIN'])
+	def showIdentification() {
+		System.out.println params
 		def patientInstance = Patient.findByIdentification(params.patientIdentification)
-		def staffInstance = Staff.get(params.id as Long)
+		def staffInstance = Staff.get(params.id)
 		
 		if (!staffInstance) {
 			flash.message = message(code: 'default.not.found.message', args: [message(code: 'staff.label', default: 'Staff'), params.staffIdentification])
@@ -102,24 +117,5 @@ class PatientController {
 
         flash.message = message(code: 'default.updated.message', args: [message(code: 'patient.label', default: 'Patient'), patientInstance.id])
         redirect(action: "show", id: patientInstance.id)
-    }
-
-    def delete(Long id) {
-        def patientInstance = Patient.get(id)
-        if (!patientInstance) {
-            flash.message = message(code: 'default.not.found.message', args: [message(code: 'patient.label', default: 'Patient'), id])
-            redirect(action: "list")
-            return
-        }
-
-        try {
-            patientInstance.delete(flush: true)
-            flash.message = message(code: 'default.deleted.message', args: [message(code: 'patient.label', default: 'Patient'), id])
-            redirect(action: "list")
-        }
-        catch (DataIntegrityViolationException e) {
-            flash.message = message(code: 'default.not.deleted.message', args: [message(code: 'patient.label', default: 'Patient'), id])
-            redirect(action: "show", id: id)
-        }
     }
 }

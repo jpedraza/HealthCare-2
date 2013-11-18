@@ -10,9 +10,13 @@
 		</div>
 		<div class="collapse navbar-collapse bs-js-navbar-collapse">
 			<ul class="nav navbar-nav">
-				<li class="active"><a href="#">Home</a></li>
-				<li><a href="#about">About</a></li>
-				<li><a href="#contact">Contact</a></li>
+				<li><a href="/HealthCare">Home</a></li>
+				<sec:ifAllGranted roles="ROLE_ADMIN">
+					<li><a href="${createLink(controller:'staff', action: 'showCurrent') }">EMR Controller</a></li>
+				</sec:ifAllGranted>
+				<sec:ifAllGranted roles="ROLE_USER">
+					<li><a href="${createLink(controller:'patient', action: 'showCurrent') }">EMR</a></li>
+				</sec:ifAllGranted>			
 			</ul>
 			<sec:ifNotLoggedIn>
 				<div class="nav navbar-form navbar-right">
@@ -25,12 +29,6 @@
 					<li class="dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown"> <i class="glyphicon glyphicon-user"></i> <sec:username/> <span class="caret"></span></a>
 						<ul class="dropdown-menu">
-							<li><a href="#about"> <i class="glyphicon glyphicon-user"></i>
-									&nbsp;&nbsp;My Profile
-							</a></li>
-							<li><a href="#about"> <i class="glyphicon glyphicon-calendar"></i>
-									&nbsp;&nbsp;My Calendar
-							</a></li>
 							<li><a href="#about"> <i class="glyphicon glyphicon-cog"></i>
 									&nbsp;&nbsp;Settings
 							</a></li>
