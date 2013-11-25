@@ -22,26 +22,18 @@
 			</g:if>
 			<table>
 				<thead>
-					<tr>
-					
+					<tr>					
 						<g:sortableColumn property="diastolicPressure" title="${message(code: 'bloodPressure.diastolicPressure.label', default: 'Diastolic Pressure')}" />
-					
 						<th><g:message code="bloodPressure.patient.label" default="Patient" /></th>
-					
 						<g:sortableColumn property="systolicPressure" title="${message(code: 'bloodPressure.systolicPressure.label', default: 'Systolic Pressure')}" />
-					
 					</tr>
 				</thead>
 				<tbody>
 				<g:each in="${bloodPressureInstanceList}" status="i" var="bloodPressureInstance">
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
-					
 						<td><g:link action="show" id="${bloodPressureInstance.id}">${fieldValue(bean: bloodPressureInstance, field: "diastolicPressure")}</g:link></td>
-					
 						<td>${fieldValue(bean: bloodPressureInstance, field: "patient")}</td>
-					
 						<td>${fieldValue(bean: bloodPressureInstance, field: "systolicPressure")}</td>
-					
 					</tr>
 				</g:each>
 				</tbody>

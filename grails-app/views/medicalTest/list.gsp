@@ -22,30 +22,20 @@
 			</g:if>
 			<table>
 				<thead>
-					<tr>
-					
+					<tr>					
 						<g:sortableColumn property="code" title="${message(code: 'medicalTest.code.label', default: 'Code')}" />
-					
 						<g:sortableColumn property="medicalTest" title="${message(code: 'medicalTest.medicalTest.label', default: 'Medical Test')}" />
-					
 						<g:sortableColumn property="medicalTestDate" title="${message(code: 'medicalTest.medicalTestDate.label', default: 'Medical Test Date')}" />
-					
 						<th><g:message code="medicalTest.patient.label" default="Patient" /></th>
-					
 					</tr>
 				</thead>
 				<tbody>
 				<g:each in="${medicalTestInstanceList}" status="i" var="medicalTestInstance">
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
-					
 						<td><g:link action="show" id="${medicalTestInstance.id}">${fieldValue(bean: medicalTestInstance, field: "code")}</g:link></td>
-					
 						<td>${fieldValue(bean: medicalTestInstance, field: "medicalTest")}</td>
-					
 						<td><g:formatDate date="${medicalTestInstance.medicalTestDate}" /></td>
-					
 						<td>${fieldValue(bean: medicalTestInstance, field: "patient")}</td>
-					
 					</tr>
 				</g:each>
 				</tbody>

@@ -4,6 +4,7 @@ import grails.plugin.springsecurity.annotation.Secured
 import org.springframework.dao.DataIntegrityViolationException
 
 	
+@Secured(['ROLE_ADMIN'])
 class StaffController {
 	def springSecurityService
 
@@ -45,7 +46,7 @@ class StaffController {
         [staffInstance: staffInstance]
     }
 	
-	@Secured(['ROLE_ADMIN'])
+	
 	def showCurrent() {
 		def staffInstance = (Staff)springSecurityService.currentUser
 		if (!staffInstance) {

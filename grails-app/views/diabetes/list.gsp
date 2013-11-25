@@ -23,21 +23,15 @@
 			<table>
 				<thead>
 					<tr>
-					
 						<g:sortableColumn property="glicemia" title="${message(code: 'diabetes.glicemia.label', default: 'Glicemia')}" />
-					
 						<th><g:message code="diabetes.patient.label" default="Patient" /></th>
-					
 					</tr>
 				</thead>
 				<tbody>
 				<g:each in="${diabetesInstanceList}" status="i" var="diabetesInstance">
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
-					
 						<td><g:link action="show" id="${diabetesInstance.id}">${fieldValue(bean: diabetesInstance, field: "glicemia")}</g:link></td>
-					
 						<td>${fieldValue(bean: diabetesInstance, field: "patient")}</td>
-					
 					</tr>
 				</g:each>
 				</tbody>

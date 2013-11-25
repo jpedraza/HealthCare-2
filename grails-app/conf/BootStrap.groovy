@@ -1,12 +1,13 @@
 
-import security.Role
-import security.UserRole
-import security.User
-import healthcare.Speciality;
-import healthcare.Staff
 import healthcare.Gender
-import healthcare.State
 import healthcare.MartialStatus
+import healthcare.Speciality
+import healthcare.Staff
+import healthcare.Patient
+import healthcare.State
+import security.Role
+import security.User
+import security.UserRole
 
 class BootStrap {
 
@@ -46,9 +47,36 @@ class BootStrap {
 		testUser.speciality = Speciality.Speciality1
         testUser.save(flush: true, failOnError:true)
 		assert User.count() == 1
+		
+		def testUser2 = new Patient()
+		testUser2.username = 'augustochaves'
+		testUser2.password = '123456'
+		testUser2.firstName = 'testador'
+		testUser2.lastName = 'testador'
+		testUser2.email = 'testador'
+		testUser2.birthDate = new Date()
+		testUser2.gender = Gender.MALE
+		testUser2.cpf = 'testador'
+		testUser2.rg = 'testador'
+		testUser2.fatherName = 'testador'
+		testUser2.motherName = 'testador'
+		testUser2.martialStatus = MartialStatus.Single
+		testUser2.phone = 'testador'
+		testUser2.celphone = 'testador'
+		testUser2.contactPhone = 'testador'
+		testUser2.address = 'testador'
+		testUser2.number = 123
+		testUser2.complement = 'testador'
+		testUser2.city = 'testador'
+		testUser2.state = State.MinasGerais
+		testUser2.zipCode = 'testador'
+		testUser2.photo = new File('files/teste.txt')
+		testUser2.identification = '123456'
+		testUser2.save(flush: true, failOnError:true)
+		assert User.count() == 2
 
-        UserRole.create testUser, adminRole, true        
-        assert UserRole.count() == 1
+        UserRole.create testUser, adminRole, true   
+        assert UserRole.count() == 2
     }
     def destroy = {
     }

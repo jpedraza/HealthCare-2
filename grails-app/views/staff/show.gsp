@@ -42,35 +42,7 @@
 			<!-- /.modal-dialog -->
 		</div>
 		<!-- /.modal -->
-	
-		<div class="modal fade" id="modalEMR" tabindex="-1" role="dialog"
-			aria-labelledby="myModalLabel" aria-hidden="true">
-			<div class="modal-dialog">
-				<div class="modal-content">
-					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal"
-							aria-hidden="true">&times;</button>
-						<h4 class="modal-title" id="myModalLabel">Search Patient</h4>
-					</div>
-					<g:form controller="patient" action="save" >
-						<div class="modal-body">						
-							<fieldset class="form">
-								<g:render template="formPatient"/>
-							</fieldset>					
-						</div>
-						<div class="modal-footer">
-							<fieldset class="buttons">
-								<g:submitButton name="create" class="btn btn-primary save" value="${message(code: 'default.button.create.label', default: 'Create')}" />
-								<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-							</fieldset>								
-						</div>
-					</g:form>
-				</div>
-				<!-- /.modal-content -->
-			</div>
-			<!-- /.modal-dialog -->
-		</div>
-		<!-- /.modal -->
+			
 		<div class="container">
 			<div class="row row-offcanvas row-offcanvas-right">
 				<div class="col-xs-12 col-sm-9">
@@ -111,8 +83,7 @@
 					<div class="well sidebar-nav">
 						<ul class="nav">
 							<li>Actions</li>
-							<li><a href="#" data-toggle="modal" data-target="#modalEMR">New
-									EMR</a></li>
+							<li><a href="${createLink(controller: 'patient', action: 'create') }">New EHR</a></li>
 							<li><a href="patient/index.html" data-toggle="modal"
 								data-target="#modalSearch">Search Patient</a></li>
 						</ul>

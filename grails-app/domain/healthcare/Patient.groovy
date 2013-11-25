@@ -10,6 +10,8 @@ class Patient extends User {
 
 	static hasMany = [appointments: Appointment, prescriptions: Prescription, diagnosis: Diagnosis,
 		allergies: Allergy, medicalTests: MedicalTest, ncds: NCD]
+	
+	static transients = ['bloodPressures', 'diabetes', 'weights']
 
 	static constraints = {
 		identification(unique: true)
@@ -26,5 +28,17 @@ class Patient extends User {
 				authority: 'ROLE_USER'
 		)		
 		UserRole.create this, userRole, false
+	}
+	
+	def getBloodPressures() {
+		return BloodPressure.findByPatient(this)
+	}
+	
+	def getDiabetes() {
+		return Diabetes.findByPatient(this)
+	}
+	
+	def getWeights() {
+		return Obesity.findByPatient(this)
 	}
 }

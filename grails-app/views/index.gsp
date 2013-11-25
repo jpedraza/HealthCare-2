@@ -15,8 +15,8 @@
 			<!-- Example row of columns -->
 			<div class="row">
 				<div class="col-lg-4">
-					<h2>EMR</h2>
-					<p>Text about EMR</p>
+					<h2>EHR</h2>
+					<p>Text about EHR</p>
 					<p>
 						<a class="btn btn-default" href="#">View details »</a>
 					</p>

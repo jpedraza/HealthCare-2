@@ -23,33 +23,21 @@
 			<table>
 				<thead>
 					<tr>
-					
 						<g:sortableColumn property="appointmentDate" title="${message(code: 'appointment.appointmentDate.label', default: 'Appointment Date')}" />
-					
 						<g:sortableColumn property="appointmentType" title="${message(code: 'appointment.appointmentType.label', default: 'Appointment Type')}" />
-					
 						<th><g:message code="appointment.doctor.label" default="Doctor" /></th>
-					
 						<g:sortableColumn property="note" title="${message(code: 'appointment.note.label', default: 'Note')}" />
-					
 						<th><g:message code="appointment.patient.label" default="Patient" /></th>
-					
 					</tr>
 				</thead>
 				<tbody>
 				<g:each in="${appointmentInstanceList}" status="i" var="appointmentInstance">
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
-					
 						<td><g:link action="show" id="${appointmentInstance.id}">${fieldValue(bean: appointmentInstance, field: "appointmentDate")}</g:link></td>
-					
 						<td>${fieldValue(bean: appointmentInstance, field: "appointmentType")}</td>
-					
 						<td>${fieldValue(bean: appointmentInstance, field: "doctor")}</td>
-					
 						<td>${fieldValue(bean: appointmentInstance, field: "note")}</td>
-					
 						<td>${fieldValue(bean: appointmentInstance, field: "patient")}</td>
-					
 					</tr>
 				</g:each>
 				</tbody>

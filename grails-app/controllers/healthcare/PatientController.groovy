@@ -5,6 +5,7 @@ import grails.plugin.springsecurity.annotation.Secured
 import org.springframework.dao.DataIntegrityViolationException
 
 
+@Secured(['ROLE_ADMIN'])
 class PatientController {
 	def springSecurityService
 
@@ -43,10 +44,10 @@ class PatientController {
 			return
 		}
 
-		render(view: "show", model: [staffInstance: patientInstance])
+		render(view: "show", model: [patientInstance: patientInstance])
 	}
 
-	@Secured(['ROLE_ADMIN'])
+	
     def show(Long id) {
         def patientInstance = Patient.get(id)
         if (!patientInstance) {
@@ -58,7 +59,7 @@ class PatientController {
         [patientInstance: patientInstance]
     }
 	
-	@Secured(['ROLE_ADMIN'])
+	
 	def showIdentification() {
 		System.out.println params
 		def patientInstance = Patient.findByIdentification(params.patientIdentification)

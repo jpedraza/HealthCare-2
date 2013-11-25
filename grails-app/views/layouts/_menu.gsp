@@ -12,10 +12,10 @@
 			<ul class="nav navbar-nav">
 				<li><a href="/HealthCare">Home</a></li>
 				<sec:ifAllGranted roles="ROLE_ADMIN">
-					<li><a href="${createLink(controller:'staff', action: 'showCurrent') }">EMR Controller</a></li>
+					<li><a href="${createLink(controller:'staff', action: 'showCurrent') }">EHR Controller</a></li>
 				</sec:ifAllGranted>
 				<sec:ifAllGranted roles="ROLE_USER">
-					<li><a href="${createLink(controller:'patient', action: 'showCurrent') }">EMR</a></li>
+					<li><a href="${createLink(controller:'patient', action: 'showCurrent') }">EHR</a></li>
 				</sec:ifAllGranted>			
 			</ul>
 			<sec:ifNotLoggedIn>
