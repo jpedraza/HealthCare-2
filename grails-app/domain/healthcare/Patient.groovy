@@ -31,14 +31,14 @@ class Patient extends User {
 	}
 	
 	def getBloodPressures() {
-		return BloodPressure.findByPatient(this)
+		return BloodPressure.findAllByPatient(this)
 	}
 	
 	def getDiabetes() {
-		return Diabetes.findByPatient(this)
+		return Diabetes.findAllByPatient(this)
 	}
 	
 	def getWeights() {
-		return Obesity.findByPatient(this)
+		return Obesity.findAllByPatient(this)
 	}
 }

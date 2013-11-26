@@ -34,7 +34,8 @@
 						</div>						
 					</div>
 					<div class="row">
-						<div id="bloodPressure" class="col-xs-12">
+					<h2 id="bloodPressure">Blood Pressure</h2>
+						<div class="col-xs-12">
 							<g:if test="${patientInstance.bloodPressures}">
 							<table class="table">
 								<thead>
@@ -60,7 +61,8 @@
 							</g:else>
 						</div>
 						<!--/span-->
-						<div id="diabetes" class="col-xs-12">
+						<h2 id="diabetes">Diabetes</h2>
+						<div class="col-xs-12">
 							<g:if test="${patientInstance.diabetes}">
 							<table class="table">
 								<thead>
@@ -84,7 +86,8 @@
 							</g:else>
 						</div>
 						<!--/span-->
-						<div id="weights" class="col-xs-12">
+						<h2 id="weights">Weight</h2>
+						<div class="col-xs-12">
 							<g:if test="${patientInstance.weights}">
 							<table class="table">
 								<thead>
@@ -95,7 +98,7 @@
 									</tr>
 								</thead>
 								<tbody>
-								<g:each in="${obesityInstanceList}" status="i" var="obesityInstance">
+								<g:each in="${patientInstance.weights}" status="i" var="obesityInstance">
 									<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
 										<td>${fieldValue(bean: obesityInstance, field: "height")}</td>
 										<td>${fieldValue(bean: obesityInstance, field: "waistline")}</td>
@@ -112,7 +115,8 @@
 							</g:else>
 						</div>
 						<!--/span-->
-						<div id="allergies" class="col-xs-12">
+						<h2 id="allergies">Allergies</h2>
+						<div class="col-xs-12">
 							<g:if test="${patientInstance.allergies}">
 							<table class="table">
 								<thead>
@@ -140,7 +144,8 @@
 							</g:else>
 						</div>
 						<!--/span-->
-						<div id="medicalTests" class="col-xs-12">
+						<h2 id="medicalTests">Medical Tests</h2>
+						<div class="col-xs-12">
 							<g:if test="${patientInstance.medicalTests}">
 							<table class="table">
 								<thead>
@@ -168,7 +173,8 @@
 							</g:else>
 						</div>
 						<!--/span-->
-						<div id="appointments" class="col-xs-12">
+						<h2 id="appointments">Appointments</h2>
+						<div class="col-xs-12">
 							<g:if test="${patientInstance.appointments}">
 							<table class="table">
 								<thead>
@@ -198,7 +204,8 @@
 							</g:else>
 						</div>
 						<!--/span-->
-						<div id="prescriptions" class="col-xs-12">
+						<h2 id="prescriptions">Prescriptions</h2>
+						<div class="col-xs-12">
 							<g:if test="${patientInstance.prescriptions}">
 							<table class="table">
 								<thead>
@@ -230,7 +237,8 @@
 							</g:else>
 						</div>
 						<!--/span-->
-						<div id="diagnosis" class="col-xs-12">
+						<h2 id="diagnosis">Diagnosis</h2>
+						<div class="col-xs-12">
 							<g:if test="${patientInstance.diagnosis}">
 							<table class="table">
 								<thead>
@@ -270,9 +278,9 @@
 						<ul class="nav">
 							<li>EHR Menu</li>
 							<li class="active"><a href="#home">Home</a></li>
+							<li><a href="#bloodPressure">NCD</a></li>
 							<li><a href="#allergies">Allergy</a></li>
 							<li><a href="#medicalTests">Medical Test</a></li>
-							<li><a href="#ncds">NCD</a></li>
 							<li><a href="#appointments">Appointment</a>
 							<li><a href="#prescriptions">Prescription</a></li>
 							<li><a href="#diagnosis">Diagnosis</a></li>							
