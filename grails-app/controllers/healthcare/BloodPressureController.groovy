@@ -3,6 +3,7 @@ package healthcare
 import org.springframework.dao.DataIntegrityViolationException
 import grails.plugin.springsecurity.annotation.Secured
 
+
 @Secured(['ROLE_ADMIN', 'ROLE_USER'])
 class BloodPressureController {
 

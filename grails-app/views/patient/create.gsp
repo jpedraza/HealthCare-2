@@ -10,7 +10,7 @@
 	<body>
 		<div class="container">
 			<div id="create-patient" class="content scaffold-create" role="main">
-				<h1>New EHR</h1>
+				<h1><g:message code="default.create.label" args="[entityName]" /></h1>
 				<g:hasErrors bean="${patientInstance}">
 					<g:eachError bean="${patientInstance}" var="error">
 						<g:if test="${error in org.springframework.validation.FieldError}">

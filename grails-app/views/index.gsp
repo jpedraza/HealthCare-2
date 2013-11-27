@@ -8,7 +8,7 @@
 		<!-- Main jumbotron for a primary marketing message or call to action -->
 		<div class="jumbotron">
 			<div class="container">
-				<h1>Welcome to the Healthcare System TESTANDO</h1>
+				<h1>Welcome to the Healthcare System</h1>
 			</div>
 		</div>
 		<div class="container">
@@ -17,23 +17,14 @@
 				<div class="col-lg-4">
 					<h2>EHR</h2>
 					<p>Text about EHR</p>
-					<p>
-						<a class="btn btn-default" href="#">View details »</a>
-					</p>
 				</div>
 				<div class="col-lg-4">
 					<h2>NCD Control</h2>
 					<p>Text about the NCD Control</p>
-					<p>
-						<a class="btn btn-default" href="#">View details »</a>
-					</p>
 				</div>
 				<div class="col-lg-4">
 					<h2>Mobile Application</h2>
 					<p>Text about the mobile application</p>
-					<p>
-						<a class="btn btn-default" href="#">View details »</a>
-					</p>
 				</div>
 			</div>
 		</div>
