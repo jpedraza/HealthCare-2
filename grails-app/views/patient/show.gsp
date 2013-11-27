@@ -276,18 +276,56 @@
 					role="navigation">
 					<div class="well sidebar-nav">
 						<ul class="nav">
-							<li>EHR Menu</li>
-							<li class="active"><a href="#home">Home</a></li>
-							<li><a href="#bloodPressure">NCD</a></li>
-							<li><a href="#allergies">Allergy</a></li>
-							<li><a href="#medicalTests">Medical Test</a></li>
-							<li><a href="#appointments">Appointment</a>
-							<li><a href="#prescriptions">Prescription</a></li>
-							<li><a href="#diagnosis">Diagnosis</a></li>							
+							<sec:ifAllGranted roles="ROLE_USER">
+								<li>EHR Menu</li>
+								<li class="active"><a href="#home">Home</a></li>
+								<li><a href="#bloodPressure">Blood Pressure</a></li>
+								<li><a href="#diabetes">Diabetes</a></li>
+								<li><a href="#weights">Weight</a></li>
+								<li><a href="#allergies">Allergy</a></li>
+								<li><a href="#medicalTests">Medical Test</a></li>
+								<li><a href="#appointments">Appointment</a></li>
+								<li><a href="#prescriptions">Prescription</a></li>
+								<li><a href="#diagnosis">Diagnosis</a></li>							
+							</sec:ifAllGranted>
 							<sec:ifAllGranted roles="ROLE_ADMIN">
-								<li>Staff Menu</li>
-								<li><a href="#">Insert</a></li>
-								<li><a href="#">Edit</a></li>
+								<li>EHR Menu</li>
+								<ul class="nav navbar-nav">
+									<li class="active"><a href="#home">Home</a></li>
+								</ul>
+								<ul class="nav navbar-nav">
+									<li><a href="${createLink(controller:'bloodPressure', action: 'create')}" class="glyphicon glyphicon-plus"></a></li>
+									<li><a href="#bloodPressure">Blood Pressure</a></li>									
+								</ul>
+								<ul class="nav navbar-nav">
+									<li><a href="${createLink(controller:'diabetes', action: 'create')}" class="glyphicon glyphicon-plus"></a></li>
+									<li><a href="#diabetes">Diabetes</a></li>									
+								</ul>
+								<ul class="nav navbar-nav">
+									<li><a href="${createLink(controller:'obesity', action: 'create')}" class="glyphicon glyphicon-plus"></a></li>
+									<li><a href="#weights">Weights</a></li>									
+								</ul>
+								<ul class="nav navbar-nav">
+									<li><a href="${createLink(controller:'allergy', action: 'create')}" class="glyphicon glyphicon-plus"></a></li>
+									<li><a href="#allergies">Allergies</a><li>									
+								</ul>
+								<ul class="nav navbar-nav">
+									<li><a href="${createLink(controller:'medicalTest', action: 'create')}" class="glyphicon glyphicon-plus"></a></li>
+									<li><a href="#medicalTests">Medical Test</a></li>									
+								</ul>
+								<ul class="nav navbar-nav">
+									<li><a href="${createLink(controller:'appointment', action: 'create')}" class="glyphicon glyphicon-plus"></a></li>
+									<li><a href="#appointments">Appointment</a></li>
+									
+								</ul>
+								<ul class="nav navbar-nav">
+									<li><a href="${createLink(controller:'prescription', action: 'create')}" class="glyphicon glyphicon-plus"></a></li>
+									<li><a href="#prescriptions">Prescription</a></li>
+								</ul>
+								<ul class="nav navbar-nav">
+									<li><a href="${createLink(controller:'diagnosis', action: 'create')}" class="glyphicon glyphicon-plus"></a></li>
+									<li><a href="#diagnosis">Diagnosis</a></li>
+								</ul>					
 							</sec:ifAllGranted>
 						</ul>
 					</div>
