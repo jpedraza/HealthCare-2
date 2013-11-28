@@ -69,5 +69,8 @@ grails.project.dependency.resolution = {
 		//Bootstrap
 		compile ":twitter-bootstrap:3.0.2"
 		
+		//Cucumber
+		compile ":cucumber:0.9.0"
+		
     }
 }

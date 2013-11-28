@@ -1,6 +1,6 @@
 package healthcare
 
-class Appointment {
+class Appointment implements Comparable {
 	
 	Date appointmentDate
 	AppointmentType appointmentType
@@ -10,4 +10,9 @@ class Appointment {
 
     static constraints = {
     }
+	
+	int compareTo(obj) {
+		id.compareTo(obj.id)
+	}
+	
 }

@@ -1,6 +1,6 @@
 package healthcare
 
-class MedicalTest {
+class MedicalTest implements Comparable{
 	
 	String medicalTest
 	Integer code
@@ -10,4 +10,8 @@ class MedicalTest {
 
     static constraints = {
     }
+	
+	int compareTo(obj) {
+		id.compareTo(obj.id)
+	}
 }

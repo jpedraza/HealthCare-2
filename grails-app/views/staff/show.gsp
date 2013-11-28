@@ -50,28 +50,57 @@
 						<button type="button" class="btn btn-primary btn-xs"
 							data-toggle="offcanvas">Toggle nav</button>
 					</p>
-					<div class="jumbotron">
-						<div>
-							<img src="https://app.divshot.com/img/placeholder-100x100.gif">
-							<span>Username</span>
-						</div>
-						<h1>Staff Index Page</h1>
-						<p>Text about that function</p>
+					<div id="home" class="jumbotron">
+						<img src="https://app.divshot.com/img/placeholder-100x100.gif">
+						<div class="content scaffold-show">
+							<div class="fieldcontain">
+								<span id="name-label" class="property-label"><g:message code="patient.firstName.label" default="Name:" /></span>
+								<span class="property-value" aria-labelledby="name-label"><g:fieldValue bean="${staffInstance}" field="firstName"/></span>
+							</div>
+							<div class="fieldcontain">
+								<span id="speciality-label" class="property-label"><g:message code="speciality.phone.label" default="Speciality:" /></span>
+								<span class="property-value" aria-labelledby="phone-label"><g:fieldValue bean="${staffInstance}" field="speciality"/></span>
+							</div>
+							<div class="fieldcontain">
+								<span id="identification-label" class="property-label"><g:message code="patient.identification.label" default="Identification:" /></span>
+								<span class="property-value" aria-labelledby="identification-label"><g:fieldValue bean="${staffInstance}" field="identification"/></span>
+							</div>
+							<div class="fieldcontain">
+								<span id="phone-label" class="property-label"><g:message code="patient.phone.label" default="Phone:" /></span>
+								<span class="property-value" aria-labelledby="phone-label"><g:fieldValue bean="${staffInstance}" field="phone"/></span>
+							</div>
+						</div>						
 					</div>
 					<div class="row">
-						<div class="col-6 col-sm-6 col-lg-4">
-							<h2>Some news</h2>
-							<p>Some news</p>
-						</div>
-						<!--/span-->
-						<div class="col-6 col-sm-6 col-lg-4">
-							<h2>Some news</h2>
-							<p>Some news</p>
-						</div>
-						<!--/span-->
-						<div class="col-6 col-sm-6 col-lg-4">
-							<h2>Some news</h2>
-							<p>Some news</p>
+						<h2 id="appointments">Appointments</h2>
+						<div class="col-xs-12">
+							<g:if test="${staffInstance.appointments}">
+							<table class="table">
+								<thead>
+									<tr>
+										<g:sortableColumn property="appointmentDate" title="${message(code: 'appointment.appointmentDate.label', default: 'Appointment Date')}" />
+										<g:sortableColumn property="appointmentType" title="${message(code: 'appointment.appointmentType.label', default: 'Appointment Type')}" />
+										<th><g:message code="appointment.doctor.label" default="Doctor" /></th>
+										<g:sortableColumn property="note" title="${message(code: 'appointment.note.label', default: 'Note')}" />
+									</tr>
+								</thead>
+								<tbody>
+								<g:each in="${staffInstance.appointments}" status="i" var="appointmentInstance">
+									<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
+										<td>${fieldValue(bean: appointmentInstance, field: "appointmentDate")}</td>
+										<td>${fieldValue(bean: appointmentInstance, field: "appointmentType")}</td>
+										<td>${fieldValue(bean: appointmentInstance, field: "doctor")}</td>
+										<td>${fieldValue(bean: appointmentInstance, field: "note")}</td>
+									</tr>
+								</g:each>
+								</tbody>
+							</table>
+							</g:if>
+							<g:else>
+								 <div class="alert alert-info">
+						            <strong>There is no Appointment</strong>
+						          </div>
+							</g:else>
 						</div>
 						<!--/span-->
 					</div>

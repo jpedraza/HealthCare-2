@@ -1,6 +1,6 @@
 package healthcare
 
-class Allergy {
+class Allergy implements Comparable{
 	
 	String allergy
 	String reaction
@@ -10,4 +10,8 @@ class Allergy {
 
     static constraints = {
     }
+	
+	int compareTo(obj) {
+		id.compareTo(obj.id)
+	}
 }

@@ -1,7 +1,6 @@
 package healthcare
 
 import grails.plugin.springsecurity.annotation.Secured
-
 import org.springframework.dao.DataIntegrityViolationException
 
 
@@ -10,15 +9,6 @@ class PatientController {
 	def springSecurityService
 
     static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
-
-    def index() {
-        redirect(action: "list", params: params)
-    }
-
-    def list(Integer max) {
-        params.max = Math.min(max ?: 10, 100)
-        [patientInstanceList: Patient.list(params), patientInstanceTotal: Patient.count()]
-    }
 
     def create() {
         [patientInstance: new Patient(params)]
@@ -61,7 +51,6 @@ class PatientController {
 	
 	
 	def showIdentification() {
-		System.out.println params
 		def patientInstance = Patient.findByIdentification(params.patientIdentification)
 		def staffInstance = Staff.get(params.id)
 		

@@ -8,6 +8,7 @@ class Patient extends User {
 
 	String identification
 
+	SortedSet appointments, prescriptions, diagnosis, allergies, medicalTests
 	static hasMany = [appointments: Appointment, prescriptions: Prescription, diagnosis: Diagnosis,
 		allergies: Allergy, medicalTests: MedicalTest, ncds: NCD]
 	

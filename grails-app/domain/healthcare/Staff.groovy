@@ -1,5 +1,7 @@
 package healthcare
 
+import java.util.SortedSet;
+
 import security.User
 import healthcare.Speciality
 
@@ -9,6 +11,7 @@ class Staff extends User {
 	
 	Speciality speciality
 	
+	SortedSet appointments
 	static hasMany = [appointments: Appointment]
 
     static constraints = {

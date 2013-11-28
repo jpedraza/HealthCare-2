@@ -1,6 +1,6 @@
 package healthcare
 
-class Prescription {
+class Prescription implements Comparable{
 	
 	String medicine
 	String concentrate
@@ -12,4 +12,8 @@ class Prescription {
 
     static constraints = {
     }
+	
+	int compareTo(obj) {
+		id.compareTo(obj.id)
+	}
 }

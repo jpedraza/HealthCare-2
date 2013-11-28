@@ -10,15 +10,6 @@ class StaffController {
 
     static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
 
-    def index() {
-        redirect(action: "list", params: params)
-    }
-
-    def list(Integer max) {
-        params.max = Math.min(max ?: 10, 100)
-        [staffInstanceList: Staff.list(params), staffInstanceTotal: Staff.count()]
-    }
-
     def create() {
         [staffInstance: new Staff(params)]
     }
