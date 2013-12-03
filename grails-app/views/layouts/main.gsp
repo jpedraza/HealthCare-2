@@ -11,10 +11,11 @@
 		
 		<r:require modules="bootstrap" />
 		
-		<!-- Le fav and touch icons -->
+		<!-- Le fav and touch icons 
 		<link rel="shortcut icon"
 			href="${resource(dir: 'images', file: 'favicon.ico')}"
 			type="image/x-icon">
+		-->
 		
 		<style type="text/css">
 		/*       * Style tweaks       * --------------------------------------------------       */
