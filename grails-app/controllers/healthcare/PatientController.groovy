@@ -1,7 +1,7 @@
 package healthcare
 
+import grails.converters.JSON
 import grails.plugin.springsecurity.annotation.Secured
-import org.springframework.dao.DataIntegrityViolationException
 
 
 @Secured(['ROLE_ADMIN'])
@@ -44,7 +44,21 @@ class PatientController {
             flash.message = message(code: 'default.not.found.message', args: [message(code: 'patient.label', default: 'Patient'), id])
             redirect(action: "list")
             return
-        }
+        }		
+		
+		if(params.mobile) {
+			def allergies = [:]
+			
+			patientInstance.allergies.each { it ->
+				allergies.put(it.allergy, it.reaction)
+			}
+			
+			render(contentType: "text/json") {
+				patient(identification: patientInstance.identification, firstName: patientInstance.firstName,
+					birthDate: patientInstance.birthDate, gender: patientInstance.gender, allergies: allergies)
+			}
+			return
+		}
 
         [patientInstance: patientInstance]
     }

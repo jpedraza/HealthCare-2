@@ -19,7 +19,12 @@ class BloodPressureController {
             render(view: "create", model: [bloodPressureInstance: bloodPressureInstance])
             return
         }
-
+		
+		if(params.mobile) {
+			render 200
+			return
+		}
+		
         flash.message = message(code: 'default.created.message', args: [message(code: 'bloodPressure.label', default: 'BloodPressure'), bloodPressureInstance.id])
         redirect(controller: 'patient', action: "show", id: bloodPressureInstance.patient.id)
     }

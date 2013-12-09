@@ -18,6 +18,11 @@ class ObesityController {
             render(view: "create", model: [obesityInstance: obesityInstance])
             return
         }
+		
+		if(params.mobile) {
+			render 200
+			return
+		}
 
         flash.message = message(code: 'default.created.message', args: [message(code: 'obesity.label', default: 'Obesity'), obesityInstance.id])
         redirect(controller: 'patient', action: "show", id: obesityInstance.patient.id)
