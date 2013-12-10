@@ -33,18 +33,6 @@ class PatientController {
 			redirect(uri: '/')
 			return
 		}
-
-		render(view: "show", model: [patientInstance: patientInstance])
-	}
-
-	
-    def show(Long id) {
-        def patientInstance = Patient.get(id)
-        if (!patientInstance) {
-            flash.message = message(code: 'default.not.found.message', args: [message(code: 'patient.label', default: 'Patient'), id])
-            redirect(action: "list")
-            return
-        }		
 		
 		if(params.mobile) {
 			def allergies = [:]
@@ -59,6 +47,18 @@ class PatientController {
 			}
 			return
 		}
+
+		render(view: "show", model: [patientInstance: patientInstance])
+	}
+
+	
+    def show(Long id) {
+        def patientInstance = Patient.get(id)
+        if (!patientInstance) {
+            flash.message = message(code: 'default.not.found.message', args: [message(code: 'patient.label', default: 'Patient'), id])
+            redirect(action: "list")
+            return
+        }		
 
         [patientInstance: patientInstance]
     }
