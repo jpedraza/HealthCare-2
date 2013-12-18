@@ -45,6 +45,9 @@ grails.project.dependency.resolution = {
         // specify dependencies here under either 'build', 'compile', 'runtime', 'test' or 'provided' scopes e.g.
 
         // runtime 'mysql:mysql-connector-java:5.1.22'
+		
+		//Heroku PostgreSQL
+		runtime 'postgresql:postgresql:8.4-702.jdbc3'
     }
 
     plugins {
@@ -71,6 +74,9 @@ grails.project.dependency.resolution = {
 		
 		//Cucumber
 		compile ":cucumber:0.9.0"
+		
+		//Heroku
+		compile ":heroku:1.0.1"
 		
     }
 }
