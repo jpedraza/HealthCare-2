@@ -47,7 +47,7 @@ grails.project.dependency.resolution = {
         // runtime 'mysql:mysql-connector-java:5.1.22'
 		
 		//Heroku PostgreSQL
-		runtime 'postgresql:postgresql:8.4-702.jdbc3'
+		runtime 'postgresql:postgresql:9.3-1100.jdbc41'
     }
 
     plugins {
