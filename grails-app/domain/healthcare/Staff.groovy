@@ -1,9 +1,8 @@
 package healthcare
 
-import java.util.SortedSet;
-
+import security.Role
 import security.User
-import healthcare.Speciality
+import security.UserRole
 
 class Staff extends User {
 	
@@ -18,4 +17,11 @@ class Staff extends User {
 		identification(unique: true)
 		appointments(nullable: true)
     }
+	
+	def afterInsert() {
+		def userRole = Role.findOrCreateWhere(
+				authority: 'ROLE_ADMIN'
+		)
+		UserRole.create this, userRole, false
+	}
 }

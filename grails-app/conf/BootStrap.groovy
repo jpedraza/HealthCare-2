@@ -277,18 +277,20 @@ class BootStrap {
 				
 				Obesity.count() == 4				
 		
-		        UserRole.create testUser, adminRole, true   
 		        assert UserRole.count() == 2
 				break
 				
-			case Environment.DEVELOPMENT:
+			case Environment.PRODUCTION:
+				UserRole.findAll()*.delete(flush:true);
+				User.findAll()*.delete(flush:true);
+				Role.findAll()*.delete(flush:true);
 				// Create Roles
 				def adminRole = Role.findOrSaveWhere(
 					authority: 'ROLE_ADMIN'
-				)
+				).save(flush:true)
 				def userRole = Role.findOrSaveWhere(
 					authority: 'ROLE_USER'
-				)
+				).save(flush:true)
 				assert Role.count() == 2
 				
 				def testUser = Staff.findOrSaveWhere(
@@ -316,14 +318,10 @@ class BootStrap {
 					photo: new File('files/teste.txt'),
 					identification: 'testador',
 					speciality: Speciality.Speciality1
-				)
+				).save(flush:true)
 				assert User.count() == 1
 				
-				def teste = UserRole.findOrSaveWhere(
-					user: testUser,
-					role: adminRole
-				)
-				assert UserRole.count() == 1				
+		        assert UserRole.count() == 1
 		}
     }
     def destroy = {

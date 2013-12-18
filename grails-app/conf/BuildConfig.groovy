@@ -76,7 +76,9 @@ grails.project.dependency.resolution = {
 		compile ":cucumber:0.9.0"
 		
 		//Heroku
-		compile ":heroku:1.0.1"
+		compile(':heroku:1.0.1') {
+			exclude 'database-session'
+	    }
 		
     }
 }
