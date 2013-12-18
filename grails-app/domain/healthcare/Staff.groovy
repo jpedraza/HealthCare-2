@@ -17,11 +17,5 @@ class Staff extends User {
 		identification(unique: true)
 		appointments(nullable: true)
     }
-	
-	def afterInsert() {
-		def userRole = Role.findOrCreateWhere(
-				authority: 'ROLE_ADMIN'
-		)
-		UserRole.create this, userRole, false
-	}
+
 }

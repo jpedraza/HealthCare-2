@@ -23,13 +23,6 @@ class Patient extends User {
 		medicalTests(nullable: true)
 		ncds(nullable: true)
 	}
-
-	def afterInsert() {
-		def userRole = Role.findOrCreateWhere(
-				authority: 'ROLE_USER'
-		)		
-		UserRole.create this, userRole, false
-	}
 	
 	def getBloodPressures() {
 		return BloodPressure.findAllByPatient(this)

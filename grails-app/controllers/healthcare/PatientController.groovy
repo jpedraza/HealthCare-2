@@ -1,7 +1,8 @@
 package healthcare
 
-import grails.converters.JSON
 import grails.plugin.springsecurity.annotation.Secured
+import security.Role
+import security.UserRole
 
 
 @Secured(['ROLE_ADMIN'])
@@ -16,10 +17,19 @@ class PatientController {
 
     def save() {
         def patientInstance = new Patient(params)
-        if (!patientInstance.save(flush: true)) {
-            render(view: "create", model: [patientInstance: patientInstance])
-            return
-        }
+		def role = Role.findByAuthority('ROLE_USER')
+		try {
+			Patient.withTransaction {
+				patientInstance.save(failOnError:true)
+				UserRole.findOrSaveWhere(
+					user: patientInstance,
+					role: role).save(failOnError:true)
+			}
+		} catch (Exception ex) {
+			System.out.println ex.message
+			render(view: "create", model: [patientInstance: patientInstance])
+			return
+		}
 
         flash.message = message(code: 'default.created.message', args: [message(code: 'patient.label', default: 'Patient'), patientInstance.id])
         redirect(action: "show", id: patientInstance.id)

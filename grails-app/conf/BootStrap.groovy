@@ -1,13 +1,11 @@
 
 import healthcare.*
 import security.*
+import grails.util.Environment
 
 class BootStrap {
 
     def init = { servletContext ->
-		UserRole.findAll()*.delete(flush:true);
-		User.findAll()*.delete(flush:true);
-		Role.findAll()*.delete(flush:true);
 		// Create Roles
 		def adminRole = Role.findOrSaveWhere(
 			authority: 'ROLE_ADMIN'
@@ -15,7 +13,7 @@ class BootStrap {
 		def userRole = Role.findOrSaveWhere(
 			authority: 'ROLE_USER'
 		).save(flush:true)
-		assert Role.count() == 2
+		
 		
 		def testUser = Staff.findOrSaveWhere(
 			username: 'testador',
@@ -42,10 +40,17 @@ class BootStrap {
 			photo: new File('files/teste.txt'),
 			identification: 'testador',
 			speciality: Speciality.Speciality1
-		).save(flush:true)
-		assert User.count() == 1
+		).save(flush:true)		
 		
-		assert UserRole.count() == 1		
+		UserRole.findOrSaveWhere(
+			user: testUser, role: adminRole).save(flush: true, insert: true)
+			
+		if(Environment.current == Environment.DEVELOPMENT) {
+			assert Role.count() == 2
+			assert User.count() == 1
+			assert UserRole.count() == 1
+		}
+		
     }
 	
     def destroy = {

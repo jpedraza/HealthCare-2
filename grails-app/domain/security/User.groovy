@@ -47,12 +47,12 @@ abstract class User {
 
 	static constraints = {
 		username(unique: true)
-		password()
 		photo(nullable:true)
 		
 	}
 
 	static mapping = {
+		table 'users'
 		password column: '`password`'
 	}
 
